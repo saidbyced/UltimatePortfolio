@@ -16,6 +16,7 @@
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
 		BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */; };
+		BBF9A06827B2D2D2007F0FF4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBF9A06727B2D2D2007F0FF4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BBF9A06127B29837007F0FF4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BBF9A06327B29A45007F0FF4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		BBF9A06727B2D2D2007F0FF4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		BBDC4B9C27A1ADEE007ABB78 = {
 			isa = PBXGroup;
 			children = (
+				BBF9A06727B2D2D2007F0FF4 /* README.md */,
 				BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */,
 				BBDC4BA627A1ADEE007ABB78 /* Products */,
 				BBF9A06027B29837007F0FF4 /* Frameworks */,
@@ -153,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF9A06827B2D2D2007F0FF4 /* README.md in Resources */,
 				BBDC4BB027A1ADEE007ABB78 /* Preview Assets.xcassets in Resources */,
 				BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */,
 			);
