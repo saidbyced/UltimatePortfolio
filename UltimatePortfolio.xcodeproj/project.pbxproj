@@ -15,6 +15,7 @@
 		BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB927A1B000007ABB78 /* DataController.swift */; };
 		BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */; };
 		BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */; };
+		BBEB2E6427B530E500F26A2C /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6327B530E500F26A2C /* ItemRowView.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -32,6 +33,7 @@
 		BBDC4BB927A1B000007ABB78 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+Extensions.swift"; sourceTree = "<group>"; };
 		BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		BBEB2E6327B530E500F26A2C /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */,
 				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
 				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
+				BBEB2E6327B530E500F26A2C /* ItemRowView.swift */,
 				BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */,
 			);
 			path = Views;
@@ -214,6 +217,7 @@
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,
 				BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */,
 				BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */,
+				BBEB2E6427B530E500F26A2C /* ItemRowView.swift in Sources */,
 				BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */,
 				BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
