@@ -56,7 +56,6 @@
 			children = (
 				BBF9A06727B2D2D2007F0FF4 /* README.md */,
 				BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */,
-				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
 				BBDC4BA627A1ADEE007ABB78 /* Products */,
 				BBF9A06027B29837007F0FF4 /* Frameworks */,
 			);
@@ -74,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */,
+				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
 				BBF915CE27B519AC00BDCE70 /* App */,
 				BBF915CF27B519B800BDCE70 /* Models */,
 				BBF915CD27B5199200BDCE70 /* Views */,
