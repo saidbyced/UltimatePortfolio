@@ -13,6 +13,8 @@
 		BBDC4BB027A1ADEE007ABB78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAF27A1ADEE007ABB78 /* Preview Assets.xcassets */; };
 		BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */; };
 		BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB927A1B000007ABB78 /* DataController.swift */; };
+		BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */; };
+		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
 		BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */; };
@@ -27,8 +29,10 @@
 		BBDC4BAF27A1ADEE007ABB78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBDC4BB727A1AE68007ABB78 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		BBDC4BB927A1B000007ABB78 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+Extensions.swift"; sourceTree = "<group>"; };
+		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
-		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF9A06127B29837007F0FF4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BBF9A06327B29A45007F0FF4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			children = (
 				BBF9A06727B2D2D2007F0FF4 /* README.md */,
 				BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */,
+				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
 				BBDC4BA627A1ADEE007ABB78 /* Products */,
 				BBF9A06027B29837007F0FF4 /* Frameworks */,
 			);
@@ -68,15 +73,11 @@
 		BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
 				BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */,
-				BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */,
-				BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */,
-				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
-				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
-				BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */,
-				BBDC4BB927A1B000007ABB78 /* DataController.swift */,
-				BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */,
+				BBF915CE27B519AC00BDCE70 /* App */,
+				BBF915CF27B519B800BDCE70 /* Models */,
+				BBF915CD27B5199200BDCE70 /* Views */,
+				BBF915D027B519BF00BDCE70 /* Resources */,
 				BBDC4BAE27A1ADEE007ABB78 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
@@ -88,6 +89,43 @@
 				BBDC4BAF27A1ADEE007ABB78 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBF915CD27B5199200BDCE70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */,
+				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
+				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBF915CE27B519AC00BDCE70 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BBF915CF27B519B800BDCE70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */,
+				BBDC4BB927A1B000007ABB78 /* DataController.swift */,
+				BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */,
+				BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBF915D027B519BF00BDCE70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BBF9A06027B29837007F0FF4 /* Frameworks */ = {
@@ -174,7 +212,9 @@
 				BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */,
 				BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */,
 				BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */,
+				BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
+				BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
@@ -322,6 +363,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christophereadie.UltimatePortfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
@@ -353,6 +396,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christophereadie.UltimatePortfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
