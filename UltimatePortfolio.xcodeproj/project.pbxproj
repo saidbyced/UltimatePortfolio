@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */; };
 		BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */; };
 		BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */; };
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		BBDC4BA527A1ADEE007ABB78 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
 				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
 				BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */,
+				BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */,
 				BBEB2E6327B530E500F26A2C /* ItemRowView.swift */,
 				BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */,
 			);
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */,
 				BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */,
 				BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */,
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,

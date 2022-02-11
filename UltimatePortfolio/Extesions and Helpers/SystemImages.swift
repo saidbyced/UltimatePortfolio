@@ -9,4 +9,5 @@ import Foundation
 
 struct SystemImage {
     static let squareAndPencil: String = "square.and.pencil"
+    static let checkmarkCircle: String = "checkmark.circle"
 }
