@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProjectsView: View {
     let showClosedProjects: Bool
-    let projects: FetchRequest<Project>
+    
+    @FetchRequest var projects: FetchedResults<Project>
     
     static let openTag: String = "Open"
     static let closedTag: String = "Closed"
@@ -17,7 +18,7 @@ struct ProjectsView: View {
     init(showClosedProjects: Bool) {
         self.showClosedProjects = showClosedProjects
         
-        projects = FetchRequest<Project>(
+        _projects = FetchRequest<Project>(
             entity: Project.entity(),
             sortDescriptors: [
                 NSSortDescriptor(
@@ -35,7 +36,7 @@ struct ProjectsView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(projects.wrappedValue) { project in
+                ForEach(projects) { project in
                     Section(header: ProjectHeaderView(project: project)) {
                         ForEach(project.projectItems) { item in
                             ItemRowView(item: item)

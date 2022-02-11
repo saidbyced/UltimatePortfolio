@@ -74,7 +74,15 @@ struct EditProjectView: View {
         .navigationTitle("Edit project")
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $isShowingDeleteAlert) {
-            Alert(title: Text("Delete Project?"), message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), primaryButton: .default(Text("Delete"), action: delete()), secondaryButton: .cancel()))
+            Alert(
+                title: Text("Delete Project?"),
+                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
+                primaryButton: .default(
+                    Text("Delete"),
+                    action: delete
+                ),
+                secondaryButton: .cancel()
+            )
         }
     }
     
