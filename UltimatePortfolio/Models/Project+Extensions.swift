@@ -8,6 +8,8 @@
 import Foundation
 
 extension Project {
+    static let colors = ProjectColor.allNames
+    
     // MARK: - CoreData helpers
     var projectTitle: String {
         return title ?? "New Project"
@@ -65,5 +67,28 @@ extension Project {
         project.creationDate = Date()
         
         return project
+    }
+    
+    enum ProjectColor: String, CaseIterable {
+        case pink, purple, red, orange, gold, green, teal, lightBlue, darkBlue, midnight, darkGray, gray
+        
+        var asString: String {
+            switch self {
+            case .pink, .purple, .red, .orange, .gold, .green, .teal, .midnight, .gray:
+                return self.rawValue.capitalized
+            case .lightBlue:
+                return "Light Blue"
+            case .darkBlue:
+                return "Dark Blue"
+            case .darkGray:
+                return "Dark Gray"
+            }
+        }
+        
+        static var allNames: [String] {
+            return ProjectColor.allCases.map { color in
+                color.asString
+            }
+        }
     }
 }
