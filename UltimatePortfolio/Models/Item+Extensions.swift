@@ -10,7 +10,7 @@ import Foundation
 extension Item {
     // MARK: - CoreData helpers
     var itemTitle: String {
-        return title ?? ""
+        return title ?? "New Item"
     }
     
     var itemDetail: String {
