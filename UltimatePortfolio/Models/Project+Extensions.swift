@@ -8,8 +8,6 @@
 import Foundation
 
 extension Project {
-    static let colors = ProjectColor.allNames
-    
     // MARK: - CoreData helpers
     var projectTitle: String {
         return title ?? "New Project"
@@ -47,6 +45,7 @@ extension Project {
         }
     }
     
+    // MARK: - View helpers
     var completionAmount: Double {
         guard !projectItems.isEmpty else {
             return 0
@@ -68,6 +67,8 @@ extension Project {
         
         return project
     }
+    
+    static let colors = ProjectColor.allNames
     
     enum ProjectColor: String, CaseIterable {
         case pink, purple, red, orange, gold, green, teal, lightBlue, darkBlue, midnight, darkGray, gray
