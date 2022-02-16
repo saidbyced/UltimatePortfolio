@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */; };
 		BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */; };
+		BB9A5BAB27BD576500300543 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */; };
 		BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */; };
 		BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */; };
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		BBDC4BA527A1ADEE007ABB78 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */,
 				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
 				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
+				BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */,
 				BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */,
 				BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */,
 				BBEB2E6327B530E500F26A2C /* ItemRowView.swift */,
@@ -253,6 +256,7 @@
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
 				BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */,
 				BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */,
+				BB9A5BAB27BD576500300543 /* SelectSomethingView.swift in Sources */,
 				BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */,
 				BBEB2E6727B5324400F26A2C /* Binding+Extensions.swift in Sources */,
 			);

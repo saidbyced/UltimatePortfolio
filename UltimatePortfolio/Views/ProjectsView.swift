@@ -19,6 +19,10 @@ struct ProjectsView: View {
     static let openTag: String = "Open"
     static let closedTag: String = "Closed"
     
+    var navigationTitle: String {
+        return showClosedProjects ? "Closed Projects" : "Open projects"
+    }
+    
     init(showClosedProjects: Bool) {
         self.showClosedProjects = showClosedProjects
         
@@ -39,78 +43,106 @@ struct ProjectsView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(projects) { project in
-                    Section(header: ProjectHeaderView(project: project)) {
-                        ForEach(project.projectItems(using: sortOrder)) { item in
-                            ItemRowView(item: item)
-                        }
-                        .onDelete { indexSet in
-                            removeItems(for: project, at: indexSet)
-                        }
-                        
-                        if !showClosedProjects {
-                            Button {
-                                withAnimation {
-                                    addNewItem(to: project)
-                                }
-                            } label: {
-                                Label("Add New Item", systemImage: SystemImage.plus)
-                            }
-                        }
-                    }
+            Group {
+                if projects.isEmpty {
+                    emptyMessage
+                } else {
+                    projectsList
                 }
             }
-            .listStyle(InsetGroupedListStyle())
-            .navigationTitle(showClosedProjects ? "Closed Projects" : "Open projects")
+            .navigationTitle(navigationTitle)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if !showClosedProjects {
-                        Button {
-                            withAnimation {
-                                addProject()
-                            }
-                        } label: {
-                            Label("Add Project", systemImage: SystemImage.plus)
-                        }
+                        addProjectButton
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        isShowingSortOrder.toggle()
-                    } label: {
-                        Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
-                    }
-
+                    sortingButton
                 }
             }
             .actionSheet(
                 isPresented: $isShowingSortOrder
             ) {
-                ActionSheet(
-                    title: Text("Sort items"),
-                    message: nil,
-                    buttons: [
-                        .default(
-                            Text("Optimised")
-                        ) {
-                            sortOrder = .optimised
-                        },
-                        .default(
-                            Text("Creation Date")
-                        ) {
-                            sortOrder = .creationDate
-                        },
-                        .default(
-                            Text("Title")
-                        ) {
-                            sortOrder = .title
+                sortItemsActionSheet
+            }
+            
+            SelectSomethingView()
+        }
+    }
+    
+    var emptyMessage: some View {
+        Text("There's nothing here right now")
+            .foregroundColor(.secondary)
+    }
+    
+    var projectsList: some View {
+        List {
+            ForEach(projects) { project in
+                Section(header: ProjectHeaderView(project: project)) {
+                    ForEach(project.projectItems(using: sortOrder)) { item in
+                        ItemRowView(project: project, item: item)
+                    }
+                    .onDelete { indexSet in
+                        removeItems(for: project, at: indexSet)
+                    }
+                    
+                    if !showClosedProjects {
+                        Button {
+                            withAnimation {
+                                addNewItem(to: project)
+                            }
+                        } label: {
+                            Label("Add New Item", systemImage: SystemImage.plus)
                         }
-                    ]
-                )
+                    }
+                }
             }
         }
+        .listStyle(InsetGroupedListStyle())
+    }
+    
+    var addProjectButton: some View {
+        Button {
+            withAnimation {
+                addProject()
+            }
+        } label: {
+            Label("Add Project", systemImage: SystemImage.plus)
+        }
+    }
+    
+    var sortingButton: some View {
+        Button {
+            isShowingSortOrder.toggle()
+        } label: {
+            Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
+        }
+    }
+    
+    var sortItemsActionSheet: ActionSheet {
+        .init(
+            title: Text("Sort items"),
+            message: nil,
+            buttons: [
+                .default(
+                    Text("Optimised")
+                ) {
+                    sortOrder = .optimised
+                },
+                .default(
+                    Text("Creation Date")
+                ) {
+                    sortOrder = .creationDate
+                },
+                .default(
+                    Text("Title")
+                ) {
+                    sortOrder = .title
+                }
+            ]
+        )
     }
     
     func addProject() {
@@ -128,7 +160,7 @@ struct ProjectsView: View {
     }
     
     func removeItems(for project: Project, at indexSet: IndexSet) {
-        let projectItems = project.projectItems
+        let projectItems = project.projectItems(using: sortOrder)
         
         for index in indexSet {
             let item = projectItems[index]
