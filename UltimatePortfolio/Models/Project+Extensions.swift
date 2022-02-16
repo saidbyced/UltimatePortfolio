@@ -27,22 +27,8 @@ extension Project {
         return items ?? []
     }
     
-    var projectItemsSorted: [Item] {
-        return projectItems.sorted { first, second in
-            if !first.completed && second.completed {
-                return true
-            } else if first.completed && !second.completed {
-                return false
-            }
-            
-            if first.priority > second.priority {
-                return true
-            } else if first.priority < second.priority {
-                return false
-            }
-            
-            return first.itemCreationDate < second.itemCreationDate
-        }
+    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
+        return projectItems.sorted(by: sortOrder.sortDescriptors)
     }
     
     // MARK: - View helpers

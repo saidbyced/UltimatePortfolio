@@ -22,6 +22,40 @@ extension Item {
     }
     
     // MARK: - View helpers
+    enum SortOrder {
+        case creationDate, optimised, title
+        
+        var sortDescriptors: [NSSortDescriptor] {
+            switch self {
+            case .creationDate:
+                return [
+                    NSSortDescriptor(
+                        keyPath: \Item.creationDate,
+                        ascending: true
+                    )
+                ]
+            case .title:
+                return [
+                    NSSortDescriptor(
+                        keyPath: \Item.itemTitle,
+                        ascending: true
+                    )
+                ]
+            case .optimised:
+                return [
+                    NSSortDescriptor(
+                        keyPath: \Item.completed,
+                        ascending: true
+                    ),
+                    NSSortDescriptor(
+                        keyPath: \Item.priority,
+                        ascending: true
+                    )
+                ]
+            }
+        }
+    }
+    
     static var example: Item {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

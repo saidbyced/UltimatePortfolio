@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */; };
+		BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */; };
 		BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */; };
 		BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */; };
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		BBDC4BA527A1ADEE007ABB78 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
 				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
+				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
 			);
 			path = "Extesions and Helpers";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
 				BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */,
+				BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */,
 				BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */,
 				BBEB2E6727B5324400F26A2C /* Binding+Extensions.swift in Sources */,
 			);

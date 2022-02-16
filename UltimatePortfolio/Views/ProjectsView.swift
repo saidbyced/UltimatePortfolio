@@ -10,9 +10,11 @@ import SwiftUI
 struct ProjectsView: View {
     let showClosedProjects: Bool
     
-    @FetchRequest var projects: FetchedResults<Project>
     @EnvironmentObject var dataController: DataController
     @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest var projects: FetchedResults<Project>
+    @State private var sortOrder: Item.SortOrder = .optimised
+    @State private var isShowingSortOrder: Bool = false
     
     static let openTag: String = "Open"
     static let closedTag: String = "Closed"
@@ -40,7 +42,7 @@ struct ProjectsView: View {
             List {
                 ForEach(projects) { project in
                     Section(header: ProjectHeaderView(project: project)) {
-                        ForEach(project.projectItems) { item in
+                        ForEach(project.projectItems(using: sortOrder)) { item in
                             ItemRowView(item: item)
                         }
                         .onDelete { indexSet in
@@ -62,15 +64,51 @@ struct ProjectsView: View {
             .listStyle(InsetGroupedListStyle())
             .navigationTitle(showClosedProjects ? "Closed Projects" : "Open projects")
             .toolbar {
-                if !showClosedProjects {
-                    Button {
-                        withAnimation {
-                            addProject()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if !showClosedProjects {
+                        Button {
+                            withAnimation {
+                                addProject()
+                            }
+                        } label: {
+                            Label("Add Project", systemImage: SystemImage.plus)
                         }
-                    } label: {
-                        Label("Add Project", systemImage: SystemImage.plus)
                     }
                 }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        isShowingSortOrder.toggle()
+                    } label: {
+                        Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
+                    }
+
+                }
+            }
+            .actionSheet(
+                isPresented: $isShowingSortOrder
+            ) {
+                ActionSheet(
+                    title: Text("Sort items"),
+                    message: nil,
+                    buttons: [
+                        .default(
+                            Text("Optimised")
+                        ) {
+                            sortOrder = .optimised
+                        },
+                        .default(
+                            Text("Creation Date")
+                        ) {
+                            sortOrder = .creationDate
+                        },
+                        .default(
+                            Text("Title")
+                        ) {
+                            sortOrder = .title
+                        }
+                    ]
+                )
             }
         }
     }

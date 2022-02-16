@@ -8,7 +8,8 @@
 import Foundation
 
 struct SystemImage {
-    static let squareAndPencil: String = "square.and.pencil"
+    static let arrowUpArrowDown: String = "arrow.up.arrow.down"
     static let checkmarkCircle: String = "checkmark.circle"
     static let plus: String = "plus"
+    static let squareAndPencil: String = "square.and.pencil"
 }
