@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  UltimatePortfolio
+
+  Created by Christopher Eadie on 17/02/2022.
+  
+*/
+
+
+/* Item */
+"New Item" = "Nuevo elemento";
+
+/* SortOrder */
+"Creation Date" = "Fecha de creación";
+"Optimised" = "Optimizado";
+"Title" = "Título";
+
+/* Priority */
+"Low" = "Baja";
+"Medium" = "Media";
+"High" = "Alta";
+
+
+/* Project*/
+"New Project" = "Nuevo proyecto";
+
+
+
+/* ContentView */
+/* Tabs */
+"Home" = "Hogar";
+"Open" = "Abrir";
+"Closed" = "Cerrado";
+"Awards" = "Premios";
+
+
+/* HomeView */
+"Up next" = "Hasta la próxima";
+"More to explore" = "Más para explorar";
+"Add data" = "Agregar datos";
+
+
+/* ProjectsView */
+"Open Projects" = "Proyectos Abiertos";
+"Closed Projects" = "Proyectos Cerrados";
+"There's nothing here right now" = "No hay nada aquí ahora";
+"Add New Item" = "Agregar elemento nuevo";
+"Add Project" = "Agregar proyecto";
+"Sort" = "Clasificar";
+"Sort items" = "Clasificar elementos";
+
+
+/* SelectSomethingView */
+"Please select something from the menu to begin." = "Seleccione algo del menú para comenzar.";
+
+
+/* EditProjectView */
+"Basic settings" = "Ajustes básicos";
+"Project name" = "Nombre del proyecto";
+"Description of this project" = "Descripción de este proyecto";
+"Custom project colour" = "Color de proyecto personalizado";
+"Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely." = "Cerrar un proyecto lo mueve de la pestaña Abierto a Cerrado; eliminarlo elimina el proyecto por completo.";
+"Reopen this project" = "Reabrir este proyecto";
+"Close this project" = "Cerrar este proyecto";
+"Delete this project" = "Eliminar este proyecto";
+"Edit project" = "Editar proyecto";
+"Delete Project?" = "¿Eliminar proyecto?";
+"Are you sure you want to delete this project? You will also delete all the items it contains." = "¿Seguro que quieres eliminar este proyecto? También eliminará todos los elementos que contiene.";
+"Delete" = "Eliminar";
+
+
+/* EditItemView */
+"Item name" = "Nombre del elemento";
+"Description" = "Descripción";
+"Priority" = "Prioridad";
+"Mark completed" = "Marcar completado";
+"Edit Item" = "Editar elemento";
+
+
+/* AwardsView */
+"Locked" = "Bloqueado";
+"Unlocked: %@" = "Desbloqueado: %@";
+"OK" = "Aceptar";

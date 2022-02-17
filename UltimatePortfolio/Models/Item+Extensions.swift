@@ -10,7 +10,7 @@ import Foundation
 extension Item {
     // MARK: - CoreData helpers
     var itemTitle: String {
-        return title ?? "New Item"
+        return title ?? NSLocalizedString("New Item", comment: "Name for new Item")
     }
     
     var itemDetail: String {
@@ -21,9 +21,35 @@ extension Item {
         return creationDate ?? Date()
     }
     
+    enum Priority: Int, CaseIterable {
+        case low = 1, medium, high
+        
+        var asString: String {
+            switch self {
+            case .low:
+                return NSLocalizedString("Low", comment: "Low priority")
+            case .medium:
+                return NSLocalizedString("Medium", comment: "Medium priority")
+            case .high:
+                return NSLocalizedString("High", comment: "High priority")
+            }
+        }
+    }
+    
     // MARK: - View helpers
     enum SortOrder {
         case creationDate, optimised, title
+        
+        var asString: String {
+            switch self {
+            case .creationDate:
+                return NSLocalizedString("Creation Date", comment: "Sort order 'creationDate' name")
+            case .optimised:
+                return NSLocalizedString("Optimised", comment: "Sort order 'optimised' name")
+            case .title:
+                return NSLocalizedString("Title", comment: "Sort order 'title' name")
+            }
+        }
         
         var sortDescriptors: [NSSortDescriptor] {
             switch self {

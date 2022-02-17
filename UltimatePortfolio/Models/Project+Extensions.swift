@@ -10,7 +10,7 @@ import Foundation
 extension Project {
     // MARK: - CoreData helpers
     var projectTitle: String {
-        return title ?? "New Project"
+        return title ?? NSLocalizedString("New Project", comment: "Name for new Project")
     }
     
     var projectDetail: String {

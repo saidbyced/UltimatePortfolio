@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */; };
+		BB81778127BEA0A100CAE66C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB81778327BEA0A100CAE66C /* Localizable.strings */; };
+		BB81778527BEA7A800CAE66C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BB81778727BEA7A800CAE66C /* Localizable.stringsdict */; };
+		BB81778927BEA90300CAE66C /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = BB81778B27BEA90300CAE66C /* Awards.json */; };
 		BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */; };
 		BB9A5BAB27BD576500300543 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */; };
 		BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BAC27BD5A5E00300543 /* Bundle+Extensions.swift */; };
-		BB9A5BAF27BD601100300543 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = BB9A5BAE27BD601100300543 /* Awards.json */; };
 		BB9A5BB127BD608C00300543 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB027BD608C00300543 /* Award.swift */; };
 		BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB227BD61D300300543 /* AwardsView.swift */; };
 		BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */; };
@@ -37,10 +39,15 @@
 
 /* Begin PBXFileReference section */
 		BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		BB81778227BEA0A100CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BB81778427BEA0AC00CAE66C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BB81778627BEA7A800CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		BB81778827BEA7AB00CAE66C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		BB81778A27BEA90300CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
+		BB81778C27BEA90900CAE66C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/Awards.json; sourceTree = "<group>"; };
 		BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		BB9A5BAC27BD5A5E00300543 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
-		BB9A5BAE27BD601100300543 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Awards.json; path = ../../../../../../../Downloads/Awards.json; sourceTree = "<group>"; };
 		BB9A5BB027BD608C00300543 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		BB9A5BB227BD61D300300543 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -100,12 +107,12 @@
 		BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */,
 				BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */,
 				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
-				BBF915CE27B519AC00BDCE70 /* App */,
 				BBF915CF27B519B800BDCE70 /* Models */,
 				BBF915CD27B5199200BDCE70 /* Views */,
-				BBEB2E6527B5322B00F26A2C /* Extesions and Helpers */,
+				BBEB2E6527B5322B00F26A2C /* Extensions and Helpers */,
 				BBF915D027B519BF00BDCE70 /* Resources */,
 				BBDC4BAE27A1ADEE007ABB78 /* Preview Content */,
 			);
@@ -120,16 +127,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BBEB2E6527B5322B00F26A2C /* Extesions and Helpers */ = {
+		BBEB2E6527B5322B00F26A2C /* Extensions and Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
 				BB9A5BAC27BD5A5E00300543 /* Bundle+Extensions.swift */,
 				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
 				BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */,
 				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
-				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
 			);
-			path = "Extesions and Helpers";
+			path = "Extensions and Helpers";
 			sourceTree = "<group>";
 		};
 		BBF915CD27B5199200BDCE70 /* Views */ = {
@@ -146,14 +153,6 @@
 				BB9A5BB227BD61D300300543 /* AwardsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BBF915CE27B519AC00BDCE70 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		BBF915CF27B519B800BDCE70 /* Models */ = {
@@ -173,7 +172,9 @@
 			children = (
 				BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */,
 				BBEB2E6827B5358600F26A2C /* Colors.xcassets */,
-				BB9A5BAE27BD601100300543 /* Awards.json */,
+				BB81778B27BEA90300CAE66C /* Awards.json */,
+				BB81778327BEA0A100CAE66C /* Localizable.strings */,
+				BB81778727BEA7A800CAE66C /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -228,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = BBDC4B9C27A1ADEE007ABB78;
 			productRefGroup = BBDC4BA627A1ADEE007ABB78 /* Products */;
@@ -245,10 +247,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBF9A06827B2D2D2007F0FF4 /* README.md in Resources */,
-				BB9A5BAF27BD601100300543 /* Awards.json in Resources */,
+				BB81778127BEA0A100CAE66C /* Localizable.strings in Resources */,
+				BB81778927BEA90300CAE66C /* Awards.json in Resources */,
 				BBEB2E6927B5358600F26A2C /* Colors.xcassets in Resources */,
 				BBDC4BB027A1ADEE007ABB78 /* Preview Assets.xcassets in Resources */,
 				BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */,
+				BB81778527BEA7A800CAE66C /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +287,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB81778327BEA0A100CAE66C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB81778227BEA0A100CAE66C /* en */,
+				BB81778427BEA0AC00CAE66C /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BB81778727BEA7A800CAE66C /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB81778627BEA7A800CAE66C /* en */,
+				BB81778827BEA7AB00CAE66C /* es */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		BB81778B27BEA90300CAE66C /* Awards.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB81778A27BEA90300CAE66C /* en */,
+				BB81778C27BEA90900CAE66C /* es */,
+			);
+			name = Awards.json;
+			path = ../../../../../../../Downloads;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BBDC4BB127A1ADEE007ABB78 /* Debug */ = {

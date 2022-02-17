@@ -19,8 +19,8 @@ struct ProjectsView: View {
     static let openTag: String = "Open"
     static let closedTag: String = "Closed"
     
-    var navigationTitle: String {
-        return showClosedProjects ? "Closed Projects" : "Open projects"
+    var navigationTitle: LocalizedStringKey {
+        return showClosedProjects ? "Closed Projects" : "Open Projects"
     }
     
     init(showClosedProjects: Bool) {
@@ -127,17 +127,17 @@ struct ProjectsView: View {
             message: nil,
             buttons: [
                 .default(
-                    Text("Optimised")
+                    Text(Item.SortOrder.optimised.asString)
                 ) {
                     sortOrder = .optimised
                 },
                 .default(
-                    Text("Creation Date")
+                    Text(Item.SortOrder.creationDate.asString)
                 ) {
                     sortOrder = .creationDate
                 },
                 .default(
-                    Text("Title")
+                    Text(Item.SortOrder.title.asString)
                 ) {
                     sortOrder = .title
                 }

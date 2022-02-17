@@ -1,0 +1,84 @@
+/* 
+  Localizable.strings
+  UltimatePortfolio
+
+  Created by Christopher Eadie on 17/02/2022.
+  
+*/
+
+
+/* Item */
+"New Item" = "New Item";
+
+/* SortOrder */
+"Creation Date" = "Creation Date";
+"Optimised" = "Optimised";
+"Title" = "Title";
+
+/* Priority */
+"Low" = "Low";
+"Medium" = "Medium";
+"High" = "High";
+
+
+/* Project*/
+"New Project" = "New Project";
+
+
+
+/* ContentView */
+/* Tabs */
+"Home" = "Home";
+"Open" = "Open";
+"Closed" = "Closed";
+"Awards" = "Awards";
+
+
+/* HomeView */
+"Up next" = "Up next";
+"More to explore" = "More to explore";
+"Add data" = "Add data";
+
+
+/* ProjectsView */
+"Open Projects" = "Open Projects";
+"Closed Projects" = "Closed Projects";
+"There's nothing here right now" = "There's nothing here right now";
+"Add New Item" = "Add New Item";
+"Add Project" = "Add Project";
+"Sort" = "Sort";
+"Sort items" = "Sort items";
+
+
+/* SelectSomethingView */
+"Please select something from the menu to begin." = "Please select something from the menu to begin.";
+
+
+/* EditProjectView */
+"Basic settings" = "Basic settings";
+"Project name" = "Project name";
+"Description of this project" = "Description of this project";
+"Custom project colour" = "Custom project colour";
+"Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely." = "Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.";
+"Reopen this project" = "Reopen this project";
+"Close this project" = "Close this project";
+"Delete this project" = "Delete this project";
+"Edit project" = "Edit project";
+"Delete Project?" = "Delete Project?";
+"Are you sure you want to delete this project? You will also delete all the items it contains." = "Are you sure you want to delete this project? You will also delete all the items it contains.";
+"Delete" = "Delete";
+
+
+/* EditItemView */
+"Basic settings" = "Basic settings";
+"Item name" = "Item name";
+"Description" = "Description";
+"Priority" = "Priority";
+"Mark completed" = "Mark completed";
+"Edit Item" = "Edit Item";
+
+
+/* AwardsView */
+"Locked" = "Locked";
+"Unlocked: %@" = "Unlocked: %@";
+"OK" = "OK";
