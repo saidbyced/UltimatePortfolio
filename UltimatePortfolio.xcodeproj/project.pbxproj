@@ -14,6 +14,7 @@
 		BB9A5BAF27BD601100300543 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = BB9A5BAE27BD601100300543 /* Awards.json */; };
 		BB9A5BB127BD608C00300543 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB027BD608C00300543 /* Award.swift */; };
 		BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB227BD61D300300543 /* AwardsView.swift */; };
+		BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */; };
 		BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */; };
 		BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */; };
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		BB9A5BAE27BD601100300543 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Awards.json; path = ../../../../../../../Downloads/Awards.json; sourceTree = "<group>"; };
 		BB9A5BB027BD608C00300543 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		BB9A5BB227BD61D300300543 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
+		BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		BBDC4BA527A1ADEE007ABB78 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,10 +123,11 @@
 		BBEB2E6527B5322B00F26A2C /* Extesions and Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
-				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
-				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
 				BB9A5BAC27BD5A5E00300543 /* Bundle+Extensions.swift */,
+				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
+				BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */,
+				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
+				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
 			);
 			path = "Extesions and Helpers";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
 				BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */,
+				BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */,
 				BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */,
 				BB9A5BAB27BD576500300543 /* SelectSomethingView.swift in Sources */,
 				BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */,
