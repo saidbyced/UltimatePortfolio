@@ -314,7 +314,6 @@
 				BB81778C27BEA90900CAE66C /* es */,
 			);
 			name = Awards.json;
-			path = ../../../../../../../Downloads;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
