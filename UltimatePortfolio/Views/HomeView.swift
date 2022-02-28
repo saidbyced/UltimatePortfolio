@@ -37,10 +37,10 @@ struct HomeView: View {
                         projectBoxes
                             .padding([.horizontal, .top])
                     }
-                    
+
                     VStack(alignment: .leading) {
                         itemList("Up next", for: items.wrappedValue.prefix(3))
-                        
+
                         itemList("More to explore", for: items.wrappedValue.dropFirst(3))
                     }
                     .padding(.horizontal)
@@ -76,6 +76,8 @@ struct HomeView: View {
                 .background(Color.secondarySystemGroupedBackground)
                 .cornerRadius(10)
                 .shadow(color: .black.opacity(0.2), radius: 5)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(project.projectTitle), \(project.projectItems.count) items, \(project.completionAmount * 100, specifier: "%g")% complete")
             }
         }
     }

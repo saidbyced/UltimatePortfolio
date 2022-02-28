@@ -24,6 +24,20 @@
 /* Project*/
 "New Project" = "Nuevo proyecto";
 
+/* ProjectColor*/
+"Pink" = "Rosa";
+"Purple" = "Púrpura";
+"Red" = "Rojo";
+"Orange" = "Naranja";
+"Gold" = "Oro";
+"Green" = "Verde";
+"Teal" = "Verde azulado";
+"Light Blue" = "Azul claro";
+"Dark Blue" = "Azul oscuro";
+"Midnight" = "Azul medianoche";
+"Dark Gray" = "Gris oscuro";
+"Gray" = "Gris";
+
 
 
 /* ContentView */
@@ -38,6 +52,7 @@
 "Up next" = "Hasta la próxima";
 "More to explore" = "Más para explorar";
 "Add data" = "Agregar datos";
+"%@, %lld items, %g%% complete" = "%@, %lld elementos, %g%% completo";
 
 
 /* ProjectsView */
@@ -48,6 +63,11 @@
 "Add Project" = "Agregar proyecto";
 "Sort" = "Clasificar";
 "Sort items" = "Clasificar elementos";
+
+
+/* ItemRowView */
+"%@, completed." = "%@, completo.";
+"%@, high priority." = "%@, alta prioridad.";
 
 
 /* SelectSomethingView */

@@ -54,6 +54,9 @@ struct EditProjectView: View {
                             color = item
                             update()
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityAddTraits(accessibilityTrait(for: item))
+                        .accessibilityLabel(LocalizedStringKey(item))
                     }
                 }
                 .padding(.vertical)
@@ -95,6 +98,14 @@ struct EditProjectView: View {
     func delete() {
         dataController.delete(project)
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    func accessibilityTrait(for item: String) -> AccessibilityTraits {
+        if item == color {
+            return [.isSelected, .isButton]
+        } else {
+            return .isButton
+        }
     }
 }
 

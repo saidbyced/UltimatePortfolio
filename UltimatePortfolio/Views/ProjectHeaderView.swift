@@ -28,6 +28,7 @@ struct ProjectHeaderView: View {
             .buttonStyle(PlainButtonStyle())
         }
         .padding(.bottom, 10)
+        .accessibilityElement(children: .combine)
     }
 }
 

@@ -26,11 +26,11 @@ struct AwardsView: View {
             .navigationTitle("Awards")
         }
         .alert(isPresented: $isShowingAwardDetails) {
-            if dataController.hasEarned(award: selectedAward) {
-                return unlockedAlert
-            } else {
-                return lockedAlert
-            }
+            .init(
+                title: lockedStatusText(for: selectedAward),
+                message: Text(selectedAward.description),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
     
@@ -48,24 +48,18 @@ struct AwardsView: View {
                         .frame(width: 100, height: 100)
                         .foregroundColor(color(for: award))
                 }
+                .accessibilityLabel(lockedStatusText(for: award))
+                .accessibilityHint(Text(award.description))
             }
         }
     }
     
-    var lockedAlert: Alert {
-        .init(
-            title: Text("Locked"),
-            message: Text(selectedAward.description),
-            dismissButton: .default(Text("OK"))
-        )
-    }
-    
-    var unlockedAlert: Alert {
-        .init(
-            title: Text("Unlocked: \(selectedAward.name)"),
-            message: Text(selectedAward.description),
-            dismissButton: .default(Text("OK"))
-        )
+    func lockedStatusText(for award: Award) -> Text {
+        if dataController.hasEarned(award: award) {
+            return Text("Unlocked: \(award.name)")
+        } else {
+            return Text("Locked")
+        }
     }
     
     func color(for award: Award) -> Color {
