@@ -29,7 +29,9 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    ProjectsSummariesView(projects: projects)
+                    if !projects.isEmpty {
+                        ProjectsSummariesView(projects: projects)
+                    }
                     
                     VStack(alignment: .leading) {
                         ItemListView(title: "Up next", items: items.wrappedValue.prefix(3))
