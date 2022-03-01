@@ -5,7 +5,8 @@
 //  Created by Christopher Eadie on 10/02/2022.
 //
 
-import Foundation
+import CoreData
+import SwiftUI
 
 extension Project {
     // MARK: - CoreData helpers
@@ -31,6 +32,13 @@ extension Project {
         return projectItems.sorted(by: sortOrder.sortDescriptors)
     }
     
+    static func newProject(managedObjectContext: NSManagedObjectContext, dataController: DataController) {
+        let project = Project(context: managedObjectContext)
+        project.closed = false
+        project.creationDate = Date()
+        dataController.save()
+    }
+    
     // MARK: - View helpers
     var completionAmount: Double {
         guard !projectItems.isEmpty else {
@@ -39,6 +47,10 @@ extension Project {
         
         let completedItems = projectItems.filter(\.completed)
         return Double(completedItems.count) / Double(projectItems.count)
+    }
+    
+    var accessibleLabel: LocalizedStringKey {
+        return LocalizedStringKey("\(projectTitle), \(projectItems.count) items, \(completionAmount * 100, specifier: "%g")% complete")
     }
     
     static var example: Project {

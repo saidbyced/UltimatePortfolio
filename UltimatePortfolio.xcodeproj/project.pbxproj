@@ -17,6 +17,8 @@
 		BB9A5BB127BD608C00300543 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB027BD608C00300543 /* Award.swift */; };
 		BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB227BD61D300300543 /* AwardsView.swift */; };
 		BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */; };
+		BBBC379E27CE41A600121793 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBC379D27CE41A600121793 /* ItemListView.swift */; };
+		BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBC379F27CE434300121793 /* ProjectsSummariesView.swift */; };
 		BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */; };
 		BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */; };
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		BB9A5BB027BD608C00300543 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		BB9A5BB227BD61D300300543 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 		BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		BBBC379D27CE41A600121793 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		BBBC379F27CE434300121793 /* ProjectsSummariesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSummariesView.swift; sourceTree = "<group>"; };
 		BBDC4BA527A1ADEE007ABB78 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 			children = (
 				BBDC4BAA27A1ADEE007ABB78 /* ContentView.swift */,
 				BBF9A06327B29A45007F0FF4 /* HomeView.swift */,
+				BBBC379F27CE434300121793 /* ProjectsSummariesView.swift */,
+				BBBC379D27CE41A600121793 /* ItemListView.swift */,
 				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
 				BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */,
 				BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */,
@@ -270,12 +276,14 @@
 				BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */,
 				BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */,
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,
+				BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */,
 				BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */,
 				BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */,
 				BBEB2E6427B530E500F26A2C /* ItemRowView.swift in Sources */,
 				BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */,
 				BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */,
 				BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */,
+				BBBC379E27CE41A600121793 /* ItemListView.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,
 				BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */,
 				BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */,

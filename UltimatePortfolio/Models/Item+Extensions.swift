@@ -5,6 +5,7 @@
 //  Created by Christopher Eadie on 10/02/2022.
 //
 
+import CoreData
 import Foundation
 
 extension Item {
@@ -34,6 +35,13 @@ extension Item {
                 return NSLocalizedString("High", comment: "High priority")
             }
         }
+    }
+    
+    static func newItem(to project: Project, managedObjectContext: NSManagedObjectContext, dataController: DataController) {
+        let item = Item(context: managedObjectContext)
+        item.project = project
+        item.creationDate = Date()
+        dataController.save()
     }
     
     // MARK: - View helpers

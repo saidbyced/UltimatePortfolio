@@ -33,12 +33,12 @@ struct ContentView: View {
                     Text("Closed")
                 }
             
-//            AwardsView()
-//                .tag(AwardsView.tag)
-//                .tabItem {
-//                    Image(systemName: SystemImage.rosette)
-//                    Text("Awards")
-//                }
+            AwardsView()
+                .tag(AwardsView.tag)
+                .tabItem {
+                    Image(systemName: SystemImage.rosette)
+                    Text("Awards")
+                }
         }
     }
 }

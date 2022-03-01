@@ -52,15 +52,9 @@ struct ProjectsView: View {
             }
             .navigationTitle(navigationTitle)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if !showClosedProjects {
-                        addProjectButton
-                    }
-                }
+                sortToolBarItem(placement: .navigationBarLeading)
                 
-                ToolbarItem(placement: .navigationBarLeading) {
-                    sortingButton
-                }
+                addToolBarItem(placement: .navigationBarTrailing)
             }
             .actionSheet(
                 isPresented: $isShowingSortOrder
@@ -85,15 +79,11 @@ struct ProjectsView: View {
                         ItemRowView(project: project, item: item)
                     }
                     .onDelete { indexSet in
-                        removeItems(for: project, at: indexSet)
+                        removeItems(from: project, at: indexSet)
                     }
                     
                     if !showClosedProjects {
-                        Button {
-                            withAnimation {
-                                addNewItem(to: project)
-                            }
-                        } label: {
+                        Button(action: { addNewItem(to: project) }) {
                             Label("Add New Item", systemImage: SystemImage.plus)
                         }
                     }
@@ -101,24 +91,6 @@ struct ProjectsView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-    }
-    
-    var addProjectButton: some View {
-        Button {
-            withAnimation {
-                addProject()
-            }
-        } label: {
-            Label("Add Project", systemImage: SystemImage.plus)
-        }
-    }
-    
-    var sortingButton: some View {
-        Button {
-            isShowingSortOrder.toggle()
-        } label: {
-            Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
-        }
     }
     
     var sortItemsActionSheet: ActionSheet {
@@ -145,21 +117,37 @@ struct ProjectsView: View {
         )
     }
     
+    func addToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
+        ToolbarItem(placement: placement) {
+            if !showClosedProjects {
+                Button(action:  addProject) {
+                    Label("Add Project", systemImage: SystemImage.plus)
+                }
+            }
+        }
+    }
+    
+    func sortToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
+        ToolbarItem(placement: placement) {
+            Button(action: { isShowingSortOrder.toggle() }) {
+                Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
+            }
+        }
+    }
+    
     func addProject() {
-        let project = Project(context: managedObjectContext)
-        project.closed = false
-        project.creationDate = Date()
-        dataController.save()
+        withAnimation {
+            Project.newProject(managedObjectContext: managedObjectContext, dataController: dataController)
+        }
     }
     
     func addNewItem(to project: Project) {
-        let item = Item(context: managedObjectContext)
-        item.project = project
-        item.creationDate = Date()
-        dataController.save()
+        withAnimation {
+            Item.newItem(to: project, managedObjectContext: managedObjectContext, dataController: dataController)
+        }
     }
     
-    func removeItems(for project: Project, at indexSet: IndexSet) {
+    func removeItems(from project: Project, at indexSet: IndexSet) {
         let projectItems = project.projectItems(using: sortOrder)
         
         for index in indexSet {

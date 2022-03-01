@@ -36,7 +36,8 @@ struct EditItemView: View {
             Section(header: Text("Priority")) {
                 Picker("Priority", selection: $priority.onChange(update)) {
                     ForEach(Item.Priority.allCases, id: \.rawValue) { priority in
-                        Text(priority.asString).tag(priority.rawValue)
+                        Text(priority.asString)
+                            .tag(priority.rawValue)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())

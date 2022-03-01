@@ -40,23 +40,7 @@ struct EditProjectView: View {
             Section(header: Text("Custom project colour")) {
                 LazyVGrid(columns: colorColumns) {
                     ForEach(Project.colors, id: \.self) { item in
-                        ZStack {
-                            Color(item)
-                                .aspectRatio(1, contentMode: .fit)
-                            
-                            if item == color {
-                                Image(systemName: SystemImage.checkmarkCircle)
-                                    .foregroundColor(.white)
-                                    .font(.largeTitle)
-                            }
-                        }
-                        .onTapGesture {
-                            color = item
-                            update()
-                        }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(accessibilityTrait(for: item))
-                        .accessibilityLabel(LocalizedStringKey(item))
+                        customColorButton(for: item)
                     }
                 }
                 .padding(.vertical)
@@ -76,17 +60,39 @@ struct EditProjectView: View {
         }
         .navigationTitle("Edit project")
         .onDisappear(perform: dataController.save)
-        .alert(isPresented: $isShowingDeleteAlert) {
-            Alert(
-                title: Text("Delete Project?"),
-                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
-                primaryButton: .default(
-                    Text("Delete"),
-                    action: delete
-                ),
-                secondaryButton: .cancel()
-            )
+        .alert(isPresented: $isShowingDeleteAlert, content: deleteAlert)
+    }
+    
+    func customColorButton(for item: String) -> some View {
+        ZStack {
+            Color(item)
+                .aspectRatio(1, contentMode: .fit)
+            
+            if item == color {
+                Image(systemName: SystemImage.checkmarkCircle)
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+            }
         }
+        .onTapGesture {
+            color = item
+            update()
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(accessibilityTrait(for: item))
+        .accessibilityLabel(LocalizedStringKey(item))
+    }
+    
+    func deleteAlert() -> Alert {
+        return .init(
+            title: Text("Delete Project?"),
+            message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
+            primaryButton: .default(
+                Text("Delete"),
+                action: delete
+            ),
+            secondaryButton: .cancel()
+        )
     }
     
     func update() {
