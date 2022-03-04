@@ -46,7 +46,9 @@ struct EditProjectView: View {
                 .padding(.vertical)
             }
             
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.")) {
+            Section(
+                footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.") // swiftlint:disable:this line_length
+            ) {
                 Button(project.closed ? "Reopen this project" : "Close this project") {
                     project.closed.toggle()
                     update()
@@ -84,9 +86,9 @@ struct EditProjectView: View {
     }
     
     func deleteAlert() -> Alert {
-        return .init(
+        return Alert(
             title: Text("Delete Project?"),
-            message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
+            message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
             primaryButton: .default(
                 Text("Delete"),
                 action: delete

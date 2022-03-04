@@ -10,7 +10,13 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var dataController: DataController
-    @FetchRequest(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)], predicate: NSPredicate(format: "closed = false")) var projects: FetchedResults<Project>
+    @FetchRequest(
+        entity: Project.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Project.title, ascending: true)
+        ],
+        predicate: NSPredicate(format: "closed = false")
+    ) var projects: FetchedResults<Project>
     
     let items: FetchRequest<Item>
     
@@ -20,10 +26,14 @@ struct HomeView: View {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         let completedPredicate = NSPredicate(format: "completed = false")
         let openProjectPredicate = NSPredicate(format: "project.closed = false")
-        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openProjectPredicate])
+        let compoundPredicate = NSCompoundPredicate(
+            type: .and,
+            subpredicates: [completedPredicate, openProjectPredicate]
+        )
+        let sortdescriptor = NSSortDescriptor(keyPath: \Item.priority, ascending: false)
         
         request.predicate = compoundPredicate
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
+        request.sortDescriptors = [sortdescriptor]
         request.fetchLimit = 10
         
         items = FetchRequest(fetchRequest: request)

@@ -39,33 +39,6 @@ extension Project {
         dataController.save()
     }
     
-    // MARK: - View helpers
-    var completionAmount: Double {
-        guard !projectItems.isEmpty else {
-            return 0
-        }
-        
-        let completedItems = projectItems.filter(\.completed)
-        return Double(completedItems.count) / Double(projectItems.count)
-    }
-    
-    var accessibleLabel: LocalizedStringKey {
-        return LocalizedStringKey("\(projectTitle), \(projectItems.count) items, \(completionAmount * 100, specifier: "%g")% complete")
-    }
-    
-    static var example: Project {
-        let controller = DataController(inMemory: true)
-        let viewContext = controller.container.viewContext
-        
-        let project = Project(context: viewContext)
-        project.title = "Example project"
-        project.detail = "This is an example Project"
-        project.closed = true
-        project.creationDate = Date()
-        
-        return project
-    }
-    
     static let colors = ProjectColor.allNames
     
     enum ProjectColor: String, CaseIterable {
@@ -89,5 +62,33 @@ extension Project {
                 color.asString
             }
         }
+    }
+    
+    // MARK: - View helpers
+    var completionAmount: Double {
+        guard !projectItems.isEmpty else {
+            return 0
+        }
+        
+        let completedItems = projectItems.filter(\.completed)
+        return Double(completedItems.count) / Double(projectItems.count)
+    }
+    
+    var accessibleLabel: LocalizedStringKey {
+        // swiftlint:disable:next line_length
+        return LocalizedStringKey("\(projectTitle), \(projectItems.count) items, \(completionAmount * 100, specifier: "%g")% complete")
+    }
+    
+    static var example: Project {
+        let controller = DataController(inMemory: true)
+        let viewContext = controller.container.viewContext
+        
+        let project = Project(context: viewContext)
+        project.title = "Example project"
+        project.detail = "This is an example Project"
+        project.closed = true
+        project.creationDate = Date()
+        
+        return project
     }
 }

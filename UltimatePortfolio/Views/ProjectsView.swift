@@ -83,6 +83,7 @@ struct ProjectsView: View {
                     }
                     
                     if !showClosedProjects {
+                        // swiftlint:disable:next multiple_closures_with_trailing_closure
                         Button(action: { addNewItem(to: project) }) {
                             Label("Add New Item", systemImage: SystemImage.plus)
                         }
@@ -120,7 +121,7 @@ struct ProjectsView: View {
     func addToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
         ToolbarItem(placement: placement) {
             if !showClosedProjects {
-                Button(action:  addProject) {
+                Button(action: addProject) {
                     Label("Add Project", systemImage: SystemImage.plus)
                 }
             }
@@ -129,6 +130,7 @@ struct ProjectsView: View {
     
     func sortToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
         ToolbarItem(placement: placement) {
+            // swiftlint:disable:next multiple_closures_with_trailing_closure
             Button(action: { isShowingSortOrder.toggle() }) {
                 Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
             }

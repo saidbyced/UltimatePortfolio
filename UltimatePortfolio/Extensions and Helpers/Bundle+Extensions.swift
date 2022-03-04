@@ -7,9 +7,13 @@
 
 import Foundation
 
-
 extension Bundle {
-    func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+    func decode<T: Decodable>(
+        _ type: T.Type,
+        from file: String,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    ) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }
@@ -22,6 +26,7 @@ extension Bundle {
         decoder.dateDecodingStrategy = dateDecodingStrategy
         decoder.keyDecodingStrategy = keyDecodingStrategy
         
+        // swiftlint:disable line_length
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
@@ -35,5 +40,6 @@ extension Bundle {
         } catch {
             fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
         }
+        // swiftlint:enable line_length
     }
 }

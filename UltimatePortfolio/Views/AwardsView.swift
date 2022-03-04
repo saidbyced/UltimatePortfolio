@@ -26,7 +26,7 @@ struct AwardsView: View {
             .navigationTitle("Awards")
         }
         .alert(isPresented: $isShowingAwardDetails) {
-            .init(
+            Alert(
                 title: lockedStatusText(for: selectedAward),
                 message: Text(selectedAward.description),
                 dismissButton: .default(Text("OK"))
@@ -63,7 +63,11 @@ struct AwardsView: View {
     }
     
     func color(for award: Award) -> Color {
-        return dataController.hasEarned(award: award) ? Color(award.color) : .secondary.opacity(0.5)
+        if dataController.hasEarned(award: award) {
+            return Color(award.color)
+        } else {
+            return .secondary.opacity(0.5)
+        }
     }
 }
 

@@ -37,7 +37,11 @@ extension Item {
         }
     }
     
-    static func newItem(to project: Project, managedObjectContext: NSManagedObjectContext, dataController: DataController) {
+    static func newItem(
+        to project: Project,
+        managedObjectContext: NSManagedObjectContext,
+        dataController: DataController
+    ) {
         let item = Item(context: managedObjectContext)
         item.project = project
         item.creationDate = Date()
