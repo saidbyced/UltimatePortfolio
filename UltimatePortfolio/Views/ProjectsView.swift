@@ -16,8 +16,8 @@ struct ProjectsView: View {
     @State private var sortOrder: Item.SortOrder = .optimised
     @State private var isShowingSortOrder: Bool = false
     
-    static let openTag: String = "Open"
-    static let closedTag: String = "Closed"
+    static let openTag: String? = "Open"
+    static let closedTag: String? = "Closed"
     
     var navigationTitle: LocalizedStringKey {
         return showClosedProjects ? "Closed Projects" : "Open Projects"

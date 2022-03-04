@@ -14,11 +14,15 @@ struct HomeView: View {
     
     let items: FetchRequest<Item>
     
-    static let tag: String = "Home"
+    static let tag: String? = "Home"
     
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "completed = false")
+        let completedPredicate = NSPredicate(format: "completed = false")
+        let openProjectPredicate = NSPredicate(format: "project.closed = false")
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openProjectPredicate])
+        
+        request.predicate = compoundPredicate
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
         request.fetchLimit = 10
         
@@ -26,6 +30,9 @@ struct HomeView: View {
     }
     
     var body: some View {
+        ZStack {
+            Color.systemGroupedBackground
+            
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
@@ -41,8 +48,11 @@ struct HomeView: View {
                     .padding(.horizontal)
                 }
             }
-            .background(Color.systemGroupedBackground)
             .navigationTitle("Home")
+            .toolbar {
+                addDataButton
+            }
+        }
         }
     }
     
