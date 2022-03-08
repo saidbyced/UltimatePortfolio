@@ -55,18 +55,18 @@ struct AwardsView: View {
     }
     
     func lockedStatusText(for award: Award) -> Text {
-        if dataController.earnedStatus(for: award).isLocked {
-            return Text("Locked")
-        } else {
+        if dataController.hasEarned(award: award) == true {
             return Text("Unlocked: \(award.name)")
+        } else {
+            return Text("Locked")
         }
     }
     
     func color(for award: Award) -> Color {
-        if dataController.earnedStatus(for: award).isLocked {
-            return .secondary.opacity(0.5)
-        } else {
+        if dataController.hasEarned(award: award) == true {
             return Color(award.color)
+        } else {
+            return .secondary.opacity(0.5)
         }
     }
 }
