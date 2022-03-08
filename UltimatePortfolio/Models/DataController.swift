@@ -85,20 +85,32 @@ class DataController: ObservableObject {
         return count ?? 0
     }
     
-    func hasEarned(award: Award) -> Bool {
+    func earnedStatus(for award: Award) -> EarningStatus {
         switch award.criterion {
         case "items":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let criterionCount = count(for: fetchRequest)
-            return criterionCount >= award.value
+            return criterionCount >= award.value ? .earned : .unearned
         case "complete":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let criterionCount = count(for: fetchRequest)
-            return criterionCount >= award.value
+            return criterionCount >= award.value ? .earned : .unearned
         default:
-//            fatalError("Unknown award criterion: \(award.criterion)")
-            return false
+            return .unknown
+        }
+    }
+    
+    enum EarningStatus {
+        case earned, unearned, unknown
+        
+        var isLocked: Bool {
+            switch self {
+            case .earned:
+                return false
+            default:
+                return true
+            }
         }
     }
 }
