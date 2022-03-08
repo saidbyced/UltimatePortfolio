@@ -22,6 +22,8 @@ struct UltimatePortfolioApp: App {
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
                 .onReceive(
+                    // As of macOS 11.1, scene phase is not supported, so using this notification
+                    // publisher instead for multi-platform deployment.
                     NotificationCenter.default.publisher(
                         for: UIApplication.willResignActiveNotification
                     ),

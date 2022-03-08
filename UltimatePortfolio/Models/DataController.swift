@@ -8,12 +8,15 @@
 import CoreData
 import SwiftUI
 
+/// <#Description#>
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         
+        // Temporary, in-memory database creation for use in testing and previews;
+        // this will be destroyed once app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
