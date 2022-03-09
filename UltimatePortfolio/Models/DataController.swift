@@ -8,10 +8,17 @@
 import CoreData
 import SwiftUI
 
-/// <#Description#>
+/// An environment singleton created for interfacing with CoreData including
+/// saving, creation of preview/test data and award status.
 class DataController: ObservableObject {
+    /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
     
+    /// Initialises a data controller either in memory (for temporary use in tests and previews),
+    /// or in permanent storage (regular application).
+    ///
+    /// Defaults to permanent storage.
+    /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         
@@ -40,6 +47,8 @@ class DataController: ObservableObject {
         return dataController
     }()
     
+    /// Creates example projects and items to make testing, and previewing views, easier.
+    /// - Throws: An error from calling save() on the NSManagedObjectContext.
     func createSampleData() throws {
         let viewContext = container.viewContext
         
@@ -63,6 +72,8 @@ class DataController: ObservableObject {
         try viewContext.save()
     }
     
+    /// Saves the CoreData context only if there are changes. Errors are silently
+    /// ignored since all attributes are optional.
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
