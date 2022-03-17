@@ -84,6 +84,12 @@ class DataController: ObservableObject {
         container.viewContext.delete(object)
     }
     
+    func delete(_ objects: [NSManagedObject]) {
+        for object in objects {
+            container.viewContext.delete(object)
+        }
+    }
+    
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -101,17 +107,18 @@ class DataController: ObservableObject {
     
     func hasEarned(award: Award) -> Bool {
         switch award.criterion {
-        case "items":
+        case .items:
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let criterionCount = count(for: fetchRequest)
             return criterionCount >= award.value
-        case "complete":
+        case .complete:
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let criterionCount = count(for: fetchRequest)
             return criterionCount >= award.value
+        // FIXME: Other cases to be handled when features created
         default:
-            fatalError("Awards parsing has failed - this should never happen")
+            return false
         }
     }
 }

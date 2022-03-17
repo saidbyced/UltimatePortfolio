@@ -8,7 +8,7 @@
 import XCTest
 @testable import UltimatePortfolio
 
-class AssetTests: XCTestCase {
+class AssetTests: UPXCTestCase {
     func testAwardsJSONLoadsCorrectly() {
         XCTAssertFalse(Award.allAwards.isEmpty, "Failed to load awards from JSON")
     }

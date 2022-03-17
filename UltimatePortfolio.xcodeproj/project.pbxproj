@@ -10,6 +10,8 @@
 		BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */; };
 		BB1E1BF127DB65D0008F0A64 /* UltimatePortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */; };
 		BB1E1BF827DB6792008F0A64 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF727DB6792008F0A64 /* AssetTests.swift */; };
+		BB1E1BFA27DB698C008F0A64 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */; };
+		BB1E1BFC27DBABEA008F0A64 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */; };
 		BB81778127BEA0A100CAE66C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB81778327BEA0A100CAE66C /* Localizable.strings */; };
 		BB81778527BEA7A800CAE66C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BB81778727BEA7A800CAE66C /* Localizable.stringsdict */; };
 		BB81778927BEA90300CAE66C /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = BB81778B27BEA90300CAE66C /* Awards.json */; };
@@ -55,6 +57,8 @@
 		BB1E1BEE27DB65D0008F0A64 /* UltimatePortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioTests.swift; sourceTree = "<group>"; };
 		BB1E1BF727DB6792008F0A64 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
+		BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
+		BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		BB81778227BEA0A100CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB81778427BEA0AC00CAE66C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB81778627BEA7A800CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			children = (
 				BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */,
 				BB1E1BF727DB6792008F0A64 /* AssetTests.swift */,
+				BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */,
+				BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */,
 			);
 			path = UltimatePortfolioTests;
 			sourceTree = "<group>";
@@ -343,7 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1E1BF827DB6792008F0A64 /* AssetTests.swift in Sources */,
+				BB1E1BFC27DBABEA008F0A64 /* AwardTests.swift in Sources */,
 				BB1E1BF127DB65D0008F0A64 /* UltimatePortfolioTests.swift in Sources */,
+				BB1E1BFA27DB698C008F0A64 /* ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
