@@ -13,6 +13,9 @@
 		BB1E1BFA27DB698C008F0A64 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */; };
 		BB1E1BFC27DBABEA008F0A64 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */; };
 		BB612D0927E35126007D770D /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB612D0827E35126007D770D /* DevelopmentTests.swift */; };
+		BB612D0B27E3766A007D770D /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB612D0A27E3766A007D770D /* ExtensionTests.swift */; };
+		BB612D0E27E3806E007D770D /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = BB612D0D27E3806E007D770D /* DecodableDictionary.json */; };
+		BB612D1027E382FA007D770D /* DecodableString.json in Resources */ = {isa = PBXBuildFile; fileRef = BB612D0F27E382FA007D770D /* DecodableString.json */; };
 		BB81778127BEA0A100CAE66C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB81778327BEA0A100CAE66C /* Localizable.strings */; };
 		BB81778527BEA7A800CAE66C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = BB81778727BEA7A800CAE66C /* Localizable.stringsdict */; };
 		BB81778927BEA90300CAE66C /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = BB81778B27BEA90300CAE66C /* Awards.json */; };
@@ -61,6 +64,9 @@
 		BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		BB612D0827E35126007D770D /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
+		BB612D0A27E3766A007D770D /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		BB612D0D27E3806E007D770D /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
+		BB612D0F27E382FA007D770D /* DecodableString.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableString.json; sourceTree = "<group>"; };
 		BB81778227BEA0A100CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB81778427BEA0AC00CAE66C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB81778627BEA7A800CAE66C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -119,13 +125,24 @@
 		BB1E1BEF27DB65D0008F0A64 /* UltimatePortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
+				BB612D0C27E3803D007D770D /* Fixtures */,
 				BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */,
 				BB1E1BF727DB6792008F0A64 /* AssetTests.swift */,
 				BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */,
 				BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */,
 				BB612D0827E35126007D770D /* DevelopmentTests.swift */,
+				BB612D0A27E3766A007D770D /* ExtensionTests.swift */,
 			);
 			path = UltimatePortfolioTests;
+			sourceTree = "<group>";
+		};
+		BB612D0C27E3803D007D770D /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				BB612D0F27E382FA007D770D /* DecodableString.json */,
+				BB612D0D27E3806E007D770D /* DecodableDictionary.json */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		BBDC4B9C27A1ADEE007ABB78 = {
@@ -307,6 +324,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB612D1027E382FA007D770D /* DecodableString.json in Resources */,
+				BB612D0E27E3806E007D770D /* DecodableDictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +373,7 @@
 				BB1E1BF827DB6792008F0A64 /* AssetTests.swift in Sources */,
 				BB1E1BFC27DBABEA008F0A64 /* AwardTests.swift in Sources */,
 				BB1E1BF127DB65D0008F0A64 /* UltimatePortfolioTests.swift in Sources */,
+				BB612D0B27E3766A007D770D /* ExtensionTests.swift in Sources */,
 				BB1E1BFA27DB698C008F0A64 /* ProjectTests.swift in Sources */,
 				BB612D0927E35126007D770D /* DevelopmentTests.swift in Sources */,
 			);
