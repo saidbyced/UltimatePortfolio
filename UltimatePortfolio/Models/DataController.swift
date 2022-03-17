@@ -99,7 +99,7 @@ class DataController: ObservableObject {
         return count ?? 0
     }
     
-    func hasEarned(award: Award) -> Bool? {
+    func hasEarned(award: Award) -> Bool {
         switch award.criterion {
         case "items":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
@@ -111,7 +111,7 @@ class DataController: ObservableObject {
             let criterionCount = count(for: fetchRequest)
             return criterionCount >= award.value
         default:
-            return nil
+            fatalError("Awards parsing has failed - this should never happen")
         }
     }
 }
