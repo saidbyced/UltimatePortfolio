@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectsSummariesView: View {
-    let projects: FetchedResults<Project>
+    @Binding var projects: [Project]
     
     var projectRows: [GridItem] {
         [ GridItem(.fixed(100)) ]

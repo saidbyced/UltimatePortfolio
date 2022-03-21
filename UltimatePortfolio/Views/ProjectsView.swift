@@ -129,7 +129,7 @@ struct ProjectsView: View {
 
 struct ProjectsView_Previews: PreviewProvider {
     static var dataController = DataController.preview
-
+    
     static var previews: some View {
         ProjectsView(dataController: dataController, showClosedProjects: false)
     }

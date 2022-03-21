@@ -135,7 +135,7 @@ class DataController: ObservableObject {
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let criterionCount = count(for: fetchRequest)
             return criterionCount >= award.value
-        // FIXME: Other cases to be handled when features created
+        // TODO: Other cases to be handled when features created
         default:
             return false
         }
