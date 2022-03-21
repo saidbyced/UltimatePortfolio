@@ -12,7 +12,7 @@ import XCTest
 class ExtensionTests: XCTestCase {
     let testBundle = Bundle(for: ExtensionTests.self)
     
-    func test_Sequence_KeyPathSortingBySelfWorks() {
+    func test_Sequence_KeyPathSortingBySelf_Works() {
         // GIVEN an un-ordered array of Integers
         let items = [1, 5, 3, 2, 4]
         
@@ -23,7 +23,7 @@ class ExtensionTests: XCTestCase {
         XCTAssertEqual(sortedItems, [1, 2, 3, 4, 5], "The sorted numbers must be ascending.")
     }
     
-    func test_Sequence_KeyPathSortingByCustomWorks() {
+    func test_Sequence_KeyPathSortingByCustom_Works() {
         // GIVEN an un-ordered array of a custom Struct
         struct ExampleStruct: Equatable {
             let value: String
@@ -41,18 +41,18 @@ class ExtensionTests: XCTestCase {
         XCTAssertEqual(sortedItems, [example3, example2, example1], "Reverse sorting should yield c, b, a.")
     }
     
-    func test_Bundle_DecodingAwards() {
+    func test_Bundle_DecodingAwards_Works() {
         let awards = Bundle.main.decode([Award].self, from: "Awards.json")
         XCTAssertFalse(awards.isEmpty, "Decoding Awards.json should yield a non-empty array.")
     }
     
-    func test_Bundle_DecodingString() {
+    func test_Bundle_DecodingString_Works() {
         let data = testBundle.decode(String.self, from: "DecodableString.json")
         let correctString = "The rain in Spain falls mainly on the Spaniards."
         XCTAssertEqual(data, correctString, "Decoding DecodableString.json should match the file contents.")
     }
     
-    func test_Bundle_DecodingDictionary() {
+    func test_Bundle_DecodingDictionary_Works() {
         let data = testBundle.decode([String: Int].self, from: "DecodableDictionary.json")
         XCTAssertEqual(data.count, 3, "Decoding DecodableDictionary.json should yield 3 values.")
         XCTAssertEqual(data["One"], 1, "Decoded dictionary should contain Int to String mappings.")

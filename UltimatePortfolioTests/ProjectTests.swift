@@ -10,7 +10,7 @@ import XCTest
 @testable import UltimatePortfolio
 
 class ProjectTests: UPXCTestCase {
-    func test_ProjectsAndItems_Creation() {
+    func test_ProjectsAndItems_CreationSucceeds() {
         // GIVEN that want 10 Projects and 100 items
         let projectTargetCount = 10
         let itemsPerProjectCount = 10

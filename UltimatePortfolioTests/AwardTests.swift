@@ -24,13 +24,13 @@ class AwardTests: UPXCTestCase {
         }
     }
     
-    func test_Award_CountOfAchievedAwardsForNewUserIsNil() {
+    func test_Award_AchievedCountForNewUserIsNil() {
         for award in awards {
             XCTAssertFalse(dataController.hasEarned(award: award))
         }
     }
     
-    func test_Award_AddingItemsEarnsAwards() {
+    func test_Award_EarnsAwardsForAddingItems() {
         // GIVEN an array or completion goals
         let values = [1, 10, 20, 50, 100, 250, 500, 1000]
         
@@ -51,7 +51,7 @@ class AwardTests: UPXCTestCase {
         }
     }
     
-    func test_Award_CompletingItemsEarnsAwards() {
+    func test_Award_EarnsAwardsForCompletingItems() {
         // GIVEN an array or completion goals
         let values = [1, 10, 20, 50, 100, 250, 500, 1000]
         
