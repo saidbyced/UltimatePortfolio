@@ -9,7 +9,7 @@ import XCTest
 @testable import UltimatePortfolio
 
 class AwardTests: UPXCTestCase {
-    func test_Performance_AwardCalculation() throws {
+    func test_Award_Calculation() throws {
         // GIVEN a large amount of sample data and a large amount of awards
         for _ in 1...100 {
             try dataController.createSampleData()

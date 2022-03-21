@@ -26,6 +26,7 @@ struct ProjectHeaderView: View {
                     .imageScale(.large)
             }
             .buttonStyle(PlainButtonStyle())
+            .accessibilityIdentifier("edit project")
         }
         .padding(.bottom, 10)
         .accessibilityElement(children: .combine)
