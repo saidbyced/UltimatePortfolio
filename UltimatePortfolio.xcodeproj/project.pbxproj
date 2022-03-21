@@ -15,7 +15,7 @@
 		BB4C547527E884E5004427F8 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C547427E884E5004427F8 /* AwardTests.swift */; };
 		BB4C547D27E885BA004427F8 /* UltimatePortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */; };
 		BB4C548527E886EC004427F8 /* UltimatePortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C548427E886EC004427F8 /* UltimatePortfolioUITests.swift */; };
-		BB4C548727E886EC004427F8 /* UltimatePortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C548627E886EC004427F8 /* UltimatePortfolioUITestsLaunchTests.swift */; };
+		BB4C548E27E8CAA3004427F8 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C548D27E8CAA3004427F8 /* ProjectsViewModel.swift */; };
 		BB612D0927E35126007D770D /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB612D0827E35126007D770D /* DevelopmentTests.swift */; };
 		BB612D0B27E3766A007D770D /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB612D0A27E3766A007D770D /* ExtensionTests.swift */; };
 		BB612D0E27E3806E007D770D /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = BB612D0D27E3806E007D770D /* DecodableDictionary.json */; };
@@ -85,7 +85,7 @@
 		BB4C547427E884E5004427F8 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		BB4C548227E886EC004427F8 /* UltimatePortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4C548427E886EC004427F8 /* UltimatePortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioUITests.swift; sourceTree = "<group>"; };
-		BB4C548627E886EC004427F8 /* UltimatePortfolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BB4C548D27E8CAA3004427F8 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		BB612D0827E35126007D770D /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		BB612D0A27E3766A007D770D /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		BB612D0D27E3806E007D770D /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4C548427E886EC004427F8 /* UltimatePortfolioUITests.swift */,
-				BB4C548627E886EC004427F8 /* UltimatePortfolioUITestsLaunchTests.swift */,
 			);
 			path = UltimatePortfolioUITests;
 			sourceTree = "<group>";
@@ -257,6 +256,7 @@
 				BBBC379F27CE434300121793 /* ProjectsSummariesView.swift */,
 				BBBC379D27CE41A600121793 /* ItemListView.swift */,
 				BBF9A06527B29AC8007F0FF4 /* ProjectsView.swift */,
+				BB4C548D27E8CAA3004427F8 /* ProjectsViewModel.swift */,
 				BB9A5BAA27BD576500300543 /* SelectSomethingView.swift */,
 				BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */,
 				BB02BCB927B69B5B00BB9849 /* EditProjectView.swift */,
@@ -510,7 +510,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB4C548727E886EC004427F8 /* UltimatePortfolioUITestsLaunchTests.swift in Sources */,
 				BB4C548527E886EC004427F8 /* UltimatePortfolioUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +521,7 @@
 				BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */,
 				BB9A5BB127BD608C00300543 /* Award.swift in Sources */,
 				BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */,
+				BB4C548E27E8CAA3004427F8 /* ProjectsViewModel.swift in Sources */,
 				BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */,
 				BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */,
 				BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */,
