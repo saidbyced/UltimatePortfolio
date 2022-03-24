@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CoreSpotlight
 import SwiftUI
 
 /// An environment singleton created for interfacing with CoreData including
@@ -13,6 +14,10 @@ import SwiftUI
 class DataController: ObservableObject {
     /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
+    
+    var viewContext: NSManagedObjectContext {
+        return container.viewContext
+    }
     
     /// Initialises a data controller either in memory (for temporary use in tests and previews),
     /// or in permanent storage (regular application).
@@ -69,7 +74,7 @@ class DataController: ObservableObject {
     /// Creates example projects and items to make testing, and previewing views, easier.
     /// - Throws: An error from calling save() on the NSManagedObjectContext.
     func createSampleData() throws {
-        let viewContext = container.viewContext
+        let viewContext = viewContext
         
         for projectNumber in 1...5 {
             let project = Project(context: viewContext)
@@ -94,33 +99,41 @@ class DataController: ObservableObject {
     /// Saves the CoreData context only if there are changes. Errors are silently
     /// ignored since all attributes are optional.
     func save() {
-        if container.viewContext.hasChanges {
-            try? container.viewContext.save()
+        if viewContext.hasChanges {
+            try? viewContext.save()
         }
     }
     
     func delete(_ object: NSManagedObject) {
-        container.viewContext.delete(object)
+        let id = object.objectID.uriRepresentation().absoluteString
+        
+        if object is Project {
+            CSSearchableIndex.default().deleteSearchableItems(withDomainIdentifiers: [id])
+        } else {
+            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [id])
+        }
+        
+        viewContext.delete(object)
     }
     
     func delete(_ objects: [NSManagedObject]) {
         for object in objects {
-            container.viewContext.delete(object)
+            delete(object)
         }
     }
     
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
-        _ = try? container.viewContext.execute(batchDeleteRequest1)
+        _ = try? viewContext.execute(batchDeleteRequest1)
         
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
-        _ = try? container.viewContext.execute(batchDeleteRequest2)
+        _ = try? viewContext.execute(batchDeleteRequest2)
     }
     
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
-        let count = try? container.viewContext.count(for: fetchRequest)
+        let count = try? viewContext.count(for: fetchRequest)
         return count ?? 0
     }
     
@@ -139,5 +152,35 @@ class DataController: ObservableObject {
         default:
             return false
         }
+    }
+    
+    func update(_ item: Item) {
+        let itemID = item.objectID.uriRepresentation().absoluteString
+        let projectID = item.project?.objectID.uriRepresentation().absoluteString
+        
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
+        attributeSet.title = item.itemTitle
+        attributeSet.contentDescription = item.itemDetail
+        
+        let searchableItem = CSSearchableItem(
+            uniqueIdentifier: itemID,
+            domainIdentifier: projectID,
+            attributeSet: attributeSet
+        )
+        
+        CSSearchableIndex.default().indexSearchableItems([searchableItem])
+        
+        save()
+    }
+    
+    func item(with uniqueIdentifier: String) -> Item? {
+        guard
+            let url = URL(string: uniqueIdentifier),
+            let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url)
+        else {
+            return nil
+        }
+        
+        return try? viewContext.existingObject(with: id) as? Item
     }
 }

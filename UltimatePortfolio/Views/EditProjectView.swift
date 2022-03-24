@@ -125,7 +125,6 @@ struct EditProjectView: View {
         }
     }
     
-    
     func accessibilityTrait(for item: String) -> AccessibilityTraits {
         if item == color {
             return [.isSelected, .isButton]
