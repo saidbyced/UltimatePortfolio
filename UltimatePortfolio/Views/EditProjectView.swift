@@ -5,6 +5,7 @@
 //  Created by Christopher Eadie on 11/02/2022.
 //
 
+import CoreHaptics
 import SwiftUI
 
 struct EditProjectView: View {
@@ -16,6 +17,7 @@ struct EditProjectView: View {
     @State private var detail: String
     @State private var color: String
     @State private var isShowingDeleteAlert: Bool = false
+    @State private var hapticEngine = try? CHHapticEngine()
     
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -49,10 +51,7 @@ struct EditProjectView: View {
             Section(
                 footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.") // swiftlint:disable:this line_length
             ) {
-                Button(project.closed ? "Reopen this project" : "Close this project") {
-                    project.closed.toggle()
-                    update()
-                }
+                Button(project.closed ? "Reopen this project" : "Close this project", action: toggleClosed)
                 
                 Button("Delete this project") {
                     isShowingDeleteAlert.toggle()
@@ -107,6 +106,25 @@ struct EditProjectView: View {
         dataController.delete(project)
         presentationMode.wrappedValue.dismiss()
     }
+    
+    func toggleClosed() {
+        project.closed.toggle()
+        
+        update()
+        
+        if project.closed {
+            do {
+                try hapticEngine?.start()
+                
+                let player = try hapticEngine?.makePlayer(with: UPHaptic.tada.pattern())
+                
+                try player?.start(atTime: 0)
+            } catch {
+                print("Haptics didn't work dude. Bummer.")
+            }
+        }
+    }
+    
     
     func accessibilityTrait(for item: String) -> AccessibilityTraits {
         if item == color {

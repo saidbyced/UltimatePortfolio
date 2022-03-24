@@ -46,6 +46,7 @@
 		BBEB2E6927B5358600F26A2C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEB2E6827B5358600F26A2C /* Colors.xcassets */; };
 		BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */; };
 		BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6C27B536C000F26A2C /* SystemImages.swift */; };
+		BBF4715227EC818700E531BA /* HapticHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715127EC818700E531BA /* HapticHelpers.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -123,6 +124,7 @@
 		BBEB2E6827B5358600F26A2C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		BBEB2E6C27B536C000F26A2C /* SystemImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImages.swift; sourceTree = "<group>"; };
+		BBF4715127EC818700E531BA /* HapticHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelpers.swift; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
 				BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */,
 				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
+				BBF4715127EC818700E531BA /* HapticHelpers.swift */,
 			);
 			path = "Extensions and Helpers";
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF4715227EC818700E531BA /* HapticHelpers.swift in Sources */,
 				BB02BCBA27B69B5B00BB9849 /* EditProjectView.swift in Sources */,
 				BB9A5BB127BD608C00300543 /* Award.swift in Sources */,
 				BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */,
