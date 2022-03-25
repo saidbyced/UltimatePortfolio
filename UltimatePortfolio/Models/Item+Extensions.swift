@@ -106,4 +106,9 @@ extension Item {
         
         return item
     }
+    
+    // MARK: - Apple integration helpers
+    var idURIString: String {
+        objectID.uriRepresentation().absoluteString
+    }
 }

@@ -91,4 +91,9 @@ extension Project {
         
         return project
     }
+    
+    // MARK: - Apple integration helpers
+    var idURIString: String {
+        objectID.uriRepresentation().absoluteString
+    }
 }

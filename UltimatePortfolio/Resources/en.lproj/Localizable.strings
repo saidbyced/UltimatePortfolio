@@ -87,6 +87,12 @@
 "Delete Project?" = "Delete Project?";
 "Are you sure you want to delete this project? You will also delete all the items it contains." = "Are you sure you want to delete this project? You will also delete all the items it contains.";
 "Delete" = "Delete";
+"Project reminders" = "Project reminders";
+"Show reminders" = "Show reminders";
+"Daily reminder time" = "Daily reminder time";
+"Oops!" = "Oops!";
+"There was a problem; please check you have notifications enabled." = "There was a problem; please check you have notifications enabled.";
+"Open Settings" = "Open Settings";
 
 
 /* EditItemView */

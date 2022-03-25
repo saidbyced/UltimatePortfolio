@@ -16,8 +16,13 @@ struct EditProjectView: View {
     @State private var title: String
     @State private var detail: String
     @State private var color: String
+    @State private var remindMe: Bool
+    @State private var reminderTime: Date
+    
     @State private var isShowingDeleteAlert: Bool = false
-    @State private var hapticEngine = try? CHHapticEngine()
+    @State private var isShowingNCFailureAlert: Bool = false
+    
+    @State private var hapticEngine: CHHapticEngine? = try? CHHapticEngine()
     
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -29,6 +34,14 @@ struct EditProjectView: View {
         _title = State(wrappedValue: project.projectTitle)
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
+        
+        if let projectReminderTime = project.reminderTime {
+            _remindMe = State(wrappedValue: true)
+            _reminderTime = State(wrappedValue: projectReminderTime)
+        } else {
+            _remindMe = State(wrappedValue: false)
+            _reminderTime = State(wrappedValue: Date())
+        }
     }
     
     var body: some View {
@@ -46,6 +59,19 @@ struct EditProjectView: View {
                     }
                 }
                 .padding(.vertical)
+            }
+            
+            Section(header: Text("Project reminders")) {
+                Toggle("Show reminders", isOn: $remindMe.animation().onChange(update))
+                    .alert(isPresented: $isShowingNCFailureAlert, content: nCFailureAlert)
+                
+                if remindMe {
+                    DatePicker(
+                        "Daily reminder time",
+                        selection: $reminderTime.onChange(update),
+                        displayedComponents: .hourAndMinute
+                    )
+                }
             }
             
             Section(
@@ -96,10 +122,38 @@ struct EditProjectView: View {
         )
     }
     
+    func nCFailureAlert() -> Alert {
+        return Alert(
+            title: Text("Oops!"),
+            message: Text("There was a problem; please check you have notifications enabled."),
+            primaryButton: .default(
+                Text("Open Settings"),
+                action: showAppSettings
+            ),
+            secondaryButton: .cancel()
+        )
+    }
+    
     func update() {
         project.title = title
         project.detail = detail
         project.color = color
+        
+        if remindMe {
+            project.reminderTime = reminderTime
+            
+            dataController.addReminders(for: project) { success in
+                if !success {
+                    project.reminderTime = nil
+                    remindMe = false
+                    isShowingNCFailureAlert = true
+                }
+            }
+        } else {
+            project.reminderTime = nil
+            
+            dataController.removeReminders(for: project)
+        }
     }
     
     func delete() {
@@ -131,6 +185,17 @@ struct EditProjectView: View {
         } else {
             return .isButton
         }
+    }
+    
+    func showAppSettings() {
+        guard
+            let settingsURL = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(settingsURL)
+        else {
+            return
+        }
+        
+        UIApplication.shared.open(settingsURL)
     }
 }
 

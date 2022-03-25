@@ -8,6 +8,7 @@
 import CoreData
 import CoreSpotlight
 import SwiftUI
+import UserNotifications
 
 /// An environment singleton created for interfacing with CoreData including
 /// saving, creation of preview/test data and award status.
@@ -154,9 +155,11 @@ class DataController: ObservableObject {
         }
     }
     
+    // MARK: - Spotlight integration
+    /// Adds Item Spotlight registry then saves CoreData changes
     func update(_ item: Item) {
         let itemID = item.objectID.uriRepresentation().absoluteString
-        let projectID = item.project?.objectID.uriRepresentation().absoluteString
+        let projectID = item.project?.idURIString
         
         let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
         attributeSet.title = item.itemTitle
@@ -173,6 +176,7 @@ class DataController: ObservableObject {
         save()
     }
     
+    /// Returns Item from  Spotlight identifier
     func item(with uniqueIdentifier: String) -> Item? {
         guard
             let url = URL(string: uniqueIdentifier),
@@ -182,5 +186,64 @@ class DataController: ObservableObject {
         }
         
         return try? viewContext.existingObject(with: id) as? Item
+    }
+    
+    // MARK: - Notifications
+    var uNCenter: UNUserNotificationCenter { return .current() }
+    
+    func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+        uNCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                self.requestNotificationsAuthorization { success in
+                    if success {
+                        self.placeReminders(for: project, completion: completion)
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(false)
+                        }
+                    }
+                }
+            case .authorized:
+                self.placeReminders(for: project, completion: completion)
+            case .denied, .ephemeral, .provisional:
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
+    func removeReminders(for project: Project) {
+        let id = project.idURIString
+        uNCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    }
+    
+    private func requestNotificationsAuthorization(completion: @escaping (Bool) -> Void) {
+        uNCenter.requestAuthorization(options: [.alert, .sound]) { granted, _ in
+            completion(granted)
+        }
+    }
+    
+    private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+        let id = project.idURIString
+        
+        let nContent = UNMutableNotificationContent()
+        nContent.title = project.projectTitle
+        nContent.sound = .default
+        if let projectDetail = project.detail {
+            nContent.subtitle = projectDetail
+        }
+        
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
+        let nTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let nRequest = UNNotificationRequest(identifier: id, content: nContent, trigger: nTrigger)
+        uNCenter.add(nRequest) { error in
+            DispatchQueue.main.async {
+                let success = error == nil
+                completion(success)
+            }
+        }
     }
 }

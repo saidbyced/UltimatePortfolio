@@ -87,6 +87,12 @@
 "Delete Project?" = "¿Eliminar proyecto?";
 "Are you sure you want to delete this project? You will also delete all the items it contains." = "¿Seguro que quieres eliminar este proyecto? También eliminará todos los elementos que contiene.";
 "Delete" = "Eliminar";
+"Project reminders" = "Recordatorios de proyectos";
+"Show reminders" = "Mostrar recordatorios";
+"Daily reminder time" = "Tiempo de recordatorio diario";
+"Oops!" = "UPS!";
+"There was a problem; please check you have notifications enabled." = "Había un problema; por favor verifica que tienes habilitadas las notificaciones.";
+"Open Settings" = "Abrir configuración";
 
 
 /* EditItemView */
