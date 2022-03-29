@@ -15,7 +15,7 @@ Minimum iOS version 15.2.
     
 ## Libraries used
 
-Swift, SwiftUI and CoreData (incl. CloudKit)
+Swift, SwiftUI, CoreData (incl. CloudKit), Haptics and StoreKit
 
 ## Meta
 
