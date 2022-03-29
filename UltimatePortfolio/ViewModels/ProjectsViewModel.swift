@@ -16,6 +16,7 @@ extension ProjectsView {
         private let projectsController: NSFetchedResultsController<Project>
         
         @Published var projects = [Project]()
+        @Published var isShowingUnlockView: Bool = false
         var sortOrder: Item.SortOrder = .optimised
         
         var managedObjectContext: NSManagedObjectContext {
@@ -56,7 +57,12 @@ extension ProjectsView {
         }
         
         func addProject() {
-            Project.newProject(managedObjectContext: managedObjectContext, dataController: dataController)
+            let canCreate = dataController.fullVersionUnlocked || dataController.count(for: Project.fetchRequest()) < 3
+            if canCreate {
+                Project.newProject(managedObjectContext: managedObjectContext, dataController: dataController)
+            } else {
+                isShowingUnlockView.toggle()
+            }
         }
         
         func addNewItem(to project: Project) {

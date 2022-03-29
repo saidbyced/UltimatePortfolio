@@ -66,7 +66,7 @@ extension Project {
     
     // MARK: - View helpers
     var completionAmount: Double {
-        guard projectItems.isEmpty == false {
+        guard projectItems.isEmpty == false else {
             return 0
         }
         

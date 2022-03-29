@@ -7,6 +7,7 @@
 
 import CoreData
 import CoreSpotlight
+import StoreKit
 import SwiftUI
 import UserNotifications
 
@@ -226,6 +227,10 @@ class DataController: ObservableObject {
                 DispatchQueue.main.async {
                     completion(false)
                 }
+            @unknown default:
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         }
     }
@@ -260,6 +265,17 @@ class DataController: ObservableObject {
                 let success = error == nil
                 completion(success)
             }
+        }
+    }
+    
+    func appLaunched() {
+        guard count(for: Project.fetchRequest()) >= 5 else { return }
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
         }
     }
 }

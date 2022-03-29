@@ -108,3 +108,18 @@
 "Locked" = "Locked";
 "Unlocked: %@" = "Unlocked: %@";
 "OK" = "OK";
+
+
+/* UnlockView */
+"Sorry, there was an error loading the store. Please try again later." = "Sorry, there was an error loading the store. Please try again later.";
+"Loading..." = "Loading...";
+"Thank you. You rock 🤘" = "Thank you. You rock 🤘";
+"Thank you. Your request is pending approval but you can carry on using the app in the mean time." = "Thank you. Your request is pending approval but you can carry on using the app in the mean time.";
+
+
+/* ProductView */
+"Get Unlimited Projects" = "Get Unlimited Projects";
+"You can add three projects for free, or pay %@ to add unlimited projects." = "You can add three projects for free, or pay %@ to add unlimited projects.";
+"If you have already bought the unlock on another device, press Restore Purchases." = "If you have already bought the unlock on another device, press Restore Purchases.";
+"Buy: %@" = "Buy: %@";
+"Restore Purchases" = "Restore Purchases";

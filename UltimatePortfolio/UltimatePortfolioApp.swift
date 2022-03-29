@@ -34,6 +34,9 @@ struct UltimatePortfolioApp: App {
                     ),
                     perform: save
                 )
+                .onAppear {
+                    dataController.appLaunched()
+                }
         }
     }
     

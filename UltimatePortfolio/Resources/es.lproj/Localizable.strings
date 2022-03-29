@@ -107,3 +107,18 @@
 "Locked" = "Bloqueado";
 "Unlocked: %@" = "Desbloqueado: %@";
 "OK" = "Aceptar";
+
+
+/* UnlockView */
+"Sorry, there was an error loading the store. Please try again later." = "Lo sentimos, hubo un error al cargar la tienda. Por favor, inténtelo de nuevo más tarde.";
+"Loading..." = "Cargando...";
+"Thank you. You rock 🤘" = "Gracias. Eres genial 🤘";
+"Thank you. Your request is pending approval but you can carry on using the app in the mean time." = "Gracias. Tu solicitud está pendiente de aprobación pero puedes seguir usando la aplicación mientras tanto.";
+
+
+/* ProductView */
+"Get Unlimited Projects" = "Obtenga Proyectos Ilimitados";
+"You can add three projects for free, or pay %@ to add unlimited projects." = "Puede agregar tres proyectos gratis o pagar %@ para agregar proyectos ilimitados.";
+"If you have already bought the unlock on another device, press Restore Purchases." = "Si ya compró el desbloqueo en otro dispositivo, presione Restaurar Compras.";
+"Buy: %@" = "Comprar: %@";
+"Restore Purchases" = "Restaurar Compras";

@@ -10,4 +10,5 @@ import SwiftUI
 extension Color {
     static let systemGroupedBackground: Color = Color(UIColor.systemGroupedBackground)
     static let secondarySystemGroupedBackground: Color = Color(UIColor.secondarySystemGroupedBackground)
+    static let lightBlue: Color = Color(Project.ProjectColor.lightBlue.asString)
 }
