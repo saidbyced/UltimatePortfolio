@@ -14,7 +14,7 @@ class UltimatePortfolioUITests: XCTestCase {
         continueAfterFailure = false
         
         app = XCUIApplication()
-        app.launchArguments = ["enable-testing"]
+        app.launchArguments = [CLArgument.enableTesting]
         app.launch()
     }
     

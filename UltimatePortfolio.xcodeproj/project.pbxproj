@@ -47,6 +47,10 @@
 		BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */; };
 		BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6C27B536C000F26A2C /* SystemImages.swift */; };
 		BBF4715227EC818700E531BA /* HapticHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715127EC818700E531BA /* HapticHelpers.swift */; };
+		BBF4715427F3014A00E531BA /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715327F3014A00E531BA /* UnlockManager.swift */; };
+		BBF4715727F30A5E00E531BA /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */; };
+		BBF4715927F30AD400E531BA /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715827F30AD400E531BA /* CommandLineArguments.swift */; };
+		BBF4715A27F30B4900E531BA /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715827F30AD400E531BA /* CommandLineArguments.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -125,6 +129,10 @@
 		BBEB2E6A27B535AE00F26A2C /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		BBEB2E6C27B536C000F26A2C /* SystemImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImages.swift; sourceTree = "<group>"; };
 		BBF4715127EC818700E531BA /* HapticHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelpers.swift; sourceTree = "<group>"; };
+		BBF4715327F3014A00E531BA /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
+		BBF4715527F3031400E531BA /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		BBF4715827F30AD400E531BA /* CommandLineArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -265,6 +273,8 @@
 				BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */,
 				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
 				BBF4715127EC818700E531BA /* HapticHelpers.swift */,
+				BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */,
+				BBF4715827F30AD400E531BA /* CommandLineArguments.swift */,
 			);
 			path = "Extensions and Helpers";
 			sourceTree = "<group>";
@@ -291,10 +301,12 @@
 			isa = PBXGroup;
 			children = (
 				BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */,
-				BBDC4BB927A1B000007ABB78 /* DataController.swift */,
 				BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */,
 				BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */,
 				BB9A5BB027BD608C00300543 /* Award.swift */,
+				BBDC4BB927A1B000007ABB78 /* DataController.swift */,
+				BBF4715327F3014A00E531BA /* UnlockManager.swift */,
+				BBF4715527F3031400E531BA /* Configuration.storekit */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -530,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF4715A27F30B4900E531BA /* CommandLineArguments.swift in Sources */,
 				BB4C548527E886EC004427F8 /* UltimatePortfolioUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,9 +561,12 @@
 				BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */,
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,
 				BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */,
+				BBF4715927F30AD400E531BA /* CommandLineArguments.swift in Sources */,
 				BB4C549327E8E036004427F8 /* ItemRowViewModel.swift in Sources */,
+				BBF4715727F30A5E00E531BA /* UserDefaultKeys.swift in Sources */,
 				BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */,
 				BBDC4BAB27A1ADEE007ABB78 /* ContentView.swift in Sources */,
+				BBF4715427F3014A00E531BA /* UnlockManager.swift in Sources */,
 				BBEB2E6427B530E500F26A2C /* ItemRowView.swift in Sources */,
 				BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */,
 				BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */,

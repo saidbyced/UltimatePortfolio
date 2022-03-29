@@ -16,6 +16,19 @@ class DataController: ObservableObject {
     /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
     
+    /// The UserDefaults suite we're using to save user data.
+    let userDefaults: UserDefaults
+    
+    /// Loads and saves whether our premium unlock has been purchased.
+    var fullVersionUnlocked: Bool {
+        get {
+            userDefaults.bool(forKey: UDKey.fullVersionUnlocked)
+        }
+        set {
+            userDefaults.set(newValue, forKey: UDKey.fullVersionUnlocked)
+        }
+    }
+    
     var viewContext: NSManagedObjectContext {
         return container.viewContext
     }
@@ -25,7 +38,10 @@ class DataController: ObservableObject {
     ///
     /// Defaults to permanent storage.
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
-    init(inMemory: Bool = false) {
+    /// - Parameter defaults: The UserDefaults suite to use for saving user data.
+    init(inMemory: Bool = false, userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
+        
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         // Temporary, in-memory database creation for use in testing and previews;
@@ -40,7 +56,7 @@ class DataController: ObservableObject {
             }
             
             #if DEBUG
-            if CommandLine.arguments.contains("enable-testing") {
+            if CommandLine.arguments.contains(CLArgument.enableTesting) {
                 self.deleteAll()
                 UIView.setAnimationsEnabled(false)
             }

@@ -143,7 +143,7 @@ struct EditProjectView: View {
             project.reminderTime = reminderTime
             
             dataController.addReminders(for: project) { success in
-                if !success {
+                if success == false {
                     project.reminderTime = nil
                     remindMe = false
                     isShowingNCFailureAlert = true

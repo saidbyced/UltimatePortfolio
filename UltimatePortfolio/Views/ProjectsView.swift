@@ -64,7 +64,7 @@ struct ProjectsView: View {
                         viewModel.removeItems(from: project, at: indexSet)
                     }
                     
-                    if !viewModel.showClosedProjects {
+                    if viewModel.showClosedProjects == false {
                         Button {
                             withAnimation {
                                 viewModel.addNewItem(to: project)
@@ -105,7 +105,7 @@ struct ProjectsView: View {
     
     func addToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
         ToolbarItem(placement: placement) {
-            if !viewModel.showClosedProjects {
+            if viewModel.showClosedProjects == false {
                 Button {
                     withAnimation {
                         viewModel.addProject()

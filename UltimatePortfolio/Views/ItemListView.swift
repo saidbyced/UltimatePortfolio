@@ -42,7 +42,7 @@ struct ItemListView: View {
                     .foregroundColor(.primary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if !item.itemDetail.isEmpty {
+                if item.itemDetail.isEmpty == false {
                     Text(item.itemDetail)
                         .foregroundColor(.secondary)
                 }

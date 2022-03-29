@@ -36,7 +36,7 @@ struct HomeView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        if !viewModel.projects.isEmpty {
+                        if viewModel.projects.isEmpty == false {
                             ProjectsSummariesView(projects: $viewModel.projects)
                         }
                         
