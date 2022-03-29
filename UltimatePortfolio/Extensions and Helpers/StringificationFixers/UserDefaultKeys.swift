@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct UDKey {
-    static let fullVersionUnlocked = "fullVersionUnlocked"
+enum UDKey: String {
+    case fullVersionUnlocked
 }

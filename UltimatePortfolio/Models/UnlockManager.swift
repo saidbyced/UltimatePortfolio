@@ -35,7 +35,7 @@ class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, S
         self.dataController = dataController
         
         let productIDs = Set([
-            UPIAPProductIdentifier.unlock
+            IAPProductIdentifier.unlock.id
         ])
         request = SKProductsRequest(productIdentifiers: productIDs)
         
@@ -104,8 +104,4 @@ class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, S
     func restore() {
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
-}
-
-struct UPIAPProductIdentifier {
-    static let unlock = "com.ChristopherEadie.UltimatePortfolio.unlock"
 }

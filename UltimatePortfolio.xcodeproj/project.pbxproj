@@ -55,6 +55,7 @@
 		BBF4715F27F3119800E531BA /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715E27F3119800E531BA /* PurchaseButton.swift */; };
 		BBF4716127F3131800E531BA /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716027F3131800E531BA /* ProductView.swift */; };
 		BBF4716327F327DB00E531BA /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716227F327DB00E531BA /* UnlockView.swift */; };
+		BBF4716527F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -141,6 +142,7 @@
 		BBF4715E27F3119800E531BA /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		BBF4716027F3131800E531BA /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		BBF4716227F327DB00E531BA /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
+		BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseProductIdentifiers.swift; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				BBEB2E6C27B536C000F26A2C /* SystemImages.swift */,
 				BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */,
 				BBF4715827F30AD400E531BA /* CommandLineArguments.swift */,
+				BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */,
 			);
 			path = StringificationFixers;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */,
 				BB4C548E27E8CAA3004427F8 /* ProjectsViewModel.swift in Sources */,
 				BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */,
+				BBF4716527F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift in Sources */,
 				BBF4715F27F3119800E531BA /* PurchaseButton.swift in Sources */,
 				BBF4716127F3131800E531BA /* ProductView.swift in Sources */,
 				BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */,

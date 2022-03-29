@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CLArgument {
-    static let enableTesting = "enable-testing"
+enum CLArgument: String {
+    case enableTesting = "enable-testing"
 }

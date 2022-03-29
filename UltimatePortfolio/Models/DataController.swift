@@ -23,10 +23,10 @@ class DataController: ObservableObject {
     /// Loads and saves whether our premium unlock has been purchased.
     var fullVersionUnlocked: Bool {
         get {
-            userDefaults.bool(forKey: UDKey.fullVersionUnlocked)
+            userDefaults.bool(forKey: UDKey.fullVersionUnlocked.rawValue)
         }
         set {
-            userDefaults.set(newValue, forKey: UDKey.fullVersionUnlocked)
+            userDefaults.set(newValue, forKey: UDKey.fullVersionUnlocked.rawValue)
         }
     }
     
@@ -57,7 +57,7 @@ class DataController: ObservableObject {
             }
             
             #if DEBUG
-            if CommandLine.arguments.contains(CLArgument.enableTesting) {
+            if CommandLine.arguments.contains(CLArgument.enableTesting.rawValue) {
                 self.deleteAll()
                 UIView.setAnimationsEnabled(false)
             }
@@ -166,7 +166,7 @@ class DataController: ObservableObject {
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let criterionCount = count(for: fetchRequest)
             return criterionCount >= award.value
-        // TODO: Other cases to be handled when features created
+        // Other cases to be handled when features created
         default:
             return false
         }
