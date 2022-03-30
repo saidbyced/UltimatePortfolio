@@ -43,6 +43,11 @@ struct ContentView: View {
                 }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+        .onContinueUserActivity(ShortcutURL.newProject.activityType, perform: createProject)
+        .userActivity(ShortcutURL.newProject.activityType) { activity in
+            activity.title = ShortcutURL.newProject.title
+            activity.isEligibleForPrediction = true
+        }
         .onOpenURL(perform: openURL)
     }
     
@@ -52,6 +57,13 @@ struct ContentView: View {
     
     func openURL(_ url: URL) {
         if url.absoluteString.contains(AppURL.newProject.rawValue) {
+            selectedView = ProjectsView.openTag
+            dataController.addProject()
+        }
+    }
+    
+    func createProject(_ userActivity: NSUserActivity) {
+        if userActivity.activityType == ShortcutURL.newProject.activityType {
             selectedView = ProjectsView.openTag
             dataController.addProject()
         }
