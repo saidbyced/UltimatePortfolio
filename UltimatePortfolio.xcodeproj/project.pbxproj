@@ -56,6 +56,9 @@
 		BBF4716127F3131800E531BA /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716027F3131800E531BA /* ProductView.swift */; };
 		BBF4716327F327DB00E531BA /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716227F327DB00E531BA /* UnlockView.swift */; };
 		BBF4716527F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */; };
+		BBF4716727F44E1E00E531BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716627F44E1E00E531BA /* AppDelegate.swift */; };
+		BBF4716927F44E2800E531BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716827F44E2800E531BA /* SceneDelegate.swift */; };
+		BBF4716B27F459AE00E531BA /* AppURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4716A27F459AE00E531BA /* AppURLs.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -143,6 +146,9 @@
 		BBF4716027F3131800E531BA /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		BBF4716227F327DB00E531BA /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseProductIdentifiers.swift; sourceTree = "<group>"; };
+		BBF4716627F44E1E00E531BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBF4716827F44E2800E531BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BBF4716A27F459AE00E531BA /* AppURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLs.swift; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				BBDC4BA827A1ADEE007ABB78 /* UltimatePortfolioApp.swift */,
+				BBF4716627F44E1E00E531BA /* AppDelegate.swift */,
+				BBF4716827F44E2800E531BA /* SceneDelegate.swift */,
 				BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */,
 				BBF9A05F27B2981E007F0FF4 /* Info.plist */,
 				BBF915CF27B519B800BDCE70 /* Models */,
@@ -297,6 +305,7 @@
 				BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */,
 				BBF4715827F30AD400E531BA /* CommandLineArguments.swift */,
 				BBF4716427F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift */,
+				BBF4716A27F459AE00E531BA /* AppURLs.swift */,
 			);
 			path = StringificationFixers;
 			sourceTree = "<group>";
@@ -579,6 +588,7 @@
 				BB9A5BB127BD608C00300543 /* Award.swift in Sources */,
 				BBF9A06627B29AC8007F0FF4 /* ProjectsView.swift in Sources */,
 				BB4C548E27E8CAA3004427F8 /* ProjectsViewModel.swift in Sources */,
+				BBF4716B27F459AE00E531BA /* AppURLs.swift in Sources */,
 				BBEB2E6B27B535AE00F26A2C /* ProjectHeaderView.swift in Sources */,
 				BBF4716527F335FB00E531BA /* InAppPurchaseProductIdentifiers.swift in Sources */,
 				BBF4715F27F3119800E531BA /* PurchaseButton.swift in Sources */,
@@ -586,6 +596,7 @@
 				BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */,
 				BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */,
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,
+				BBF4716727F44E1E00E531BA /* AppDelegate.swift in Sources */,
 				BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */,
 				BBF4715927F30AD400E531BA /* CommandLineArguments.swift in Sources */,
 				BB4C549327E8E036004427F8 /* ItemRowViewModel.swift in Sources */,
@@ -597,6 +608,7 @@
 				BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */,
 				BBF4716327F327DB00E531BA /* UnlockView.swift in Sources */,
 				BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */,
+				BBF4716927F44E2800E531BA /* SceneDelegate.swift in Sources */,
 				BBEB2E6D27B536C000F26A2C /* SystemImages.swift in Sources */,
 				BBBC379E27CE41A600121793 /* ItemListView.swift in Sources */,
 				BBDC4BA927A1ADEE007ABB78 /* UltimatePortfolioApp.swift in Sources */,

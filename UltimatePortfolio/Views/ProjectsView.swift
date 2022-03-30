@@ -122,8 +122,9 @@ struct ProjectsView: View {
     
     func sortToolBarItem(placement: ToolbarItemPlacement) -> some ToolbarContent {
         ToolbarItem(placement: placement) {
-            // swiftlint:disable:next multiple_closures_with_trailing_closure
-            Button(action: { isShowingSortOrder.toggle() }) {
+            Button {
+                isShowingSortOrder.toggle()
+            } label: {
                 Label("Sort", systemImage: SystemImage.arrowUpArrowDown)
             }
         }

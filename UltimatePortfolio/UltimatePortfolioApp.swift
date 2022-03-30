@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct UltimatePortfolioApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var dataController: DataController
     @StateObject var unlockManager: UnlockManager
+    @State var newProjectCount: Int
     
     init() {
         let dataController = DataController()
@@ -18,6 +20,7 @@ struct UltimatePortfolioApp: App {
         
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+        _newProjectCount = State(wrappedValue: 0)
     }
     
     var body: some Scene {
@@ -34,13 +37,15 @@ struct UltimatePortfolioApp: App {
                     ),
                     perform: save
                 )
-                .onAppear {
-                    dataController.appLaunched()
-                }
+                .onAppear(perform: dataController.appLaunched)
         }
     }
     
     func save(_ note: Notification) {
         dataController.save()
+    }
+    
+    func resetNewProjectCount() {
+        newProjectCount = 0
     }
 }

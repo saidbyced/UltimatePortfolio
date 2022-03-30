@@ -122,6 +122,16 @@ class DataController: ObservableObject {
         }
     }
     
+    @discardableResult func addProject() -> Bool {
+        let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
+        if canCreate {
+            Project.newProject(managedObjectContext: viewContext, dataController: self)
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func delete(_ object: NSManagedObject) {
         let id = object.objectID.uriRepresentation().absoluteString
         

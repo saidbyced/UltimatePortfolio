@@ -57,10 +57,7 @@ extension ProjectsView {
         }
         
         func addProject() {
-            let canCreate = dataController.fullVersionUnlocked || dataController.count(for: Project.fetchRequest()) < 3
-            if canCreate {
-                Project.newProject(managedObjectContext: managedObjectContext, dataController: dataController)
-            } else {
+            if dataController.addProject() == false {
                 isShowingUnlockView.toggle()
             }
         }
