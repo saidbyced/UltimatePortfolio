@@ -7,9 +7,8 @@
 
 import CoreData
 import CoreSpotlight
-import StoreKit
 import SwiftUI
-import UserNotifications
+import WidgetKit
 
 /// An environment singleton created for interfacing with CoreData including
 /// saving, creation of preview/test data and award status.
@@ -49,6 +48,11 @@ class DataController: ObservableObject {
         // this will be destroyed once app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            let groupID = "group.com.christophereadie.UltimatePortfolio"
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appendingPathComponent("Main.sqlite")
+            }
         }
         
         container.loadPersistentStores { _, error in
@@ -119,17 +123,28 @@ class DataController: ObservableObject {
     func save() {
         if viewContext.hasChanges {
             try? viewContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
     @discardableResult func addProject() -> Bool {
         let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
         if canCreate {
-            Project.newProject(managedObjectContext: viewContext, dataController: self)
+            let project = Project(context: viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            save()
             return true
         } else {
             return false
         }
+    }
+    
+    func addNewItem(to project: Project) {
+        let item = Item(context: viewContext)
+        item.project = project
+        item.creationDate = Date()
+        save()
     }
     
     func delete(_ object: NSManagedObject) {
@@ -165,28 +180,30 @@ class DataController: ObservableObject {
         return count ?? 0
     }
     
-    func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-        case .items:
-            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-            let criterionCount = count(for: fetchRequest)
-            return criterionCount >= award.value
-        case .complete:
-            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-            fetchRequest.predicate = NSPredicate(format: "completed = true")
-            let criterionCount = count(for: fetchRequest)
-            return criterionCount >= award.value
-        // Other cases to be handled when features created
-        default:
-            return false
-        }
+    func fetchRequestForTopItems(count: Int) -> NSFetchRequest<Item> {
+        let itemFetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        let completedPredicate = NSPredicate(format: "completed = false")
+        let openProjectPredicate = NSPredicate(format: "project.closed = false")
+        let compoundPredicate = NSCompoundPredicate(
+            type: .and,
+            subpredicates: [completedPredicate, openProjectPredicate]
+        )
+        let sortdescriptor = NSSortDescriptor(keyPath: \Item.priority, ascending: false)
+        itemFetchRequest.predicate = compoundPredicate
+        itemFetchRequest.sortDescriptors = [sortdescriptor]
+        itemFetchRequest.fetchLimit = count
+        return itemFetchRequest
+    }
+    
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? viewContext.fetch(fetchRequest)) ?? []
     }
     
     // MARK: - Spotlight integration
     /// Adds Item Spotlight registry then saves CoreData changes
     func update(_ item: Item) {
         let itemID = item.objectID.uriRepresentation().absoluteString
-        let projectID = item.project?.idURIString
+        let projectID = item.project?.objectID.uriRepresentation().absoluteString
         
         let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
         attributeSet.title = item.itemTitle
@@ -213,79 +230,5 @@ class DataController: ObservableObject {
         }
         
         return try? viewContext.existingObject(with: id) as? Item
-    }
-    
-    // MARK: - Notifications
-    var uNCenter: UNUserNotificationCenter { return .current() }
-    
-    func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        uNCenter.getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-            case .notDetermined:
-                self.requestNotificationsAuthorization { success in
-                    if success {
-                        self.placeReminders(for: project, completion: completion)
-                    } else {
-                        DispatchQueue.main.async {
-                            completion(false)
-                        }
-                    }
-                }
-            case .authorized:
-                self.placeReminders(for: project, completion: completion)
-            case .denied, .ephemeral, .provisional:
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-            @unknown default:
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-            }
-        }
-    }
-    
-    func removeReminders(for project: Project) {
-        let id = project.idURIString
-        uNCenter.removePendingNotificationRequests(withIdentifiers: [id])
-    }
-    
-    private func requestNotificationsAuthorization(completion: @escaping (Bool) -> Void) {
-        uNCenter.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            completion(granted)
-        }
-    }
-    
-    private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        let id = project.idURIString
-        
-        let nContent = UNMutableNotificationContent()
-        nContent.title = project.projectTitle
-        nContent.sound = .default
-        if let projectDetail = project.detail {
-            nContent.subtitle = projectDetail
-        }
-        
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
-        let nTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        let nRequest = UNNotificationRequest(identifier: id, content: nContent, trigger: nTrigger)
-        uNCenter.add(nRequest) { error in
-            DispatchQueue.main.async {
-                let success = error == nil
-                completion(success)
-            }
-        }
-    }
-    
-    func appLaunched() {
-        guard count(for: Project.fetchRequest()) >= 5 else { return }
-        
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-        
-        if let windowScene = scene as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: windowScene)
-        }
     }
 }

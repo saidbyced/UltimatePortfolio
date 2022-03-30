@@ -32,13 +32,6 @@ extension Project {
         return projectItems.sorted(by: sortOrder.sortDescriptors)
     }
     
-    static func newProject(managedObjectContext: NSManagedObjectContext, dataController: DataController) {
-        let project = Project(context: managedObjectContext)
-        project.closed = false
-        project.creationDate = Date()
-        dataController.save()
-    }
-    
     static let colors = ProjectColor.allNames
     
     enum ProjectColor: String, CaseIterable {
@@ -90,10 +83,5 @@ extension Project {
         project.creationDate = Date()
         
         return project
-    }
-    
-    // MARK: - Apple integration helpers
-    var idURIString: String {
-        objectID.uriRepresentation().absoluteString
     }
 }

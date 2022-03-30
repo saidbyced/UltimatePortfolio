@@ -63,7 +63,7 @@ extension ProjectsView {
         }
         
         func addNewItem(to project: Project) {
-            Item.newItem(to: project, managedObjectContext: managedObjectContext, dataController: dataController)
+            dataController.addNewItem(to: project)
         }
         
         func removeItems(from project: Project, at indexSet: IndexSet) {

@@ -37,17 +37,6 @@ extension Item {
         }
     }
     
-    static func newItem(
-        to project: Project,
-        managedObjectContext: NSManagedObjectContext,
-        dataController: DataController
-    ) {
-        let item = Item(context: managedObjectContext)
-        item.project = project
-        item.creationDate = Date()
-        dataController.save()
-    }
-    
     // MARK: - View helpers
     enum SortOrder {
         case creationDate, optimised, title

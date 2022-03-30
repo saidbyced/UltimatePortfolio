@@ -5,6 +5,7 @@
 //  Created by Christopher Eadie on 26/01/2022.
 //
 
+import StoreKit
 import SwiftUI
 
 @main
@@ -37,7 +38,7 @@ struct UltimatePortfolioApp: App {
                     ),
                     perform: save
                 )
-                .onAppear(perform: dataController.appLaunched)
+                .onAppear(perform: appLaunched)
         }
     }
     
@@ -47,5 +48,17 @@ struct UltimatePortfolioApp: App {
     
     func resetNewProjectCount() {
         newProjectCount = 0
+    }
+    
+    /// Shows App Store review if conditions met
+    func appLaunched() {
+        guard dataController.count(for: Project.fetchRequest()) >= 5 else { return }
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
     }
 }

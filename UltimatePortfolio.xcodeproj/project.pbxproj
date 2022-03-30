@@ -65,6 +65,13 @@
 		BBF4717927F460FE00E531BA /* UltimatePortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4717827F460FE00E531BA /* UltimatePortfolioWidget.swift */; };
 		BBF4717B27F460FF00E531BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF4717A27F460FF00E531BA /* Assets.xcassets */; };
 		BBF4717F27F460FF00E531BA /* UltimatePortfolioWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BBF4717227F460FE00E531BA /* UltimatePortfolioWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BBF4718427F461D700E531BA /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */; };
+		BBF4718527F461E400E531BA /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
+		BBF4718627F4620C00E531BA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB927A1B000007ABB78 /* DataController.swift */; };
+		BBF4718827F4629E00E531BA /* DataController-Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4718727F4629E00E531BA /* DataController-Reminders.swift */; };
+		BBF4718A27F4631700E531BA /* DataController-Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4718927F4631700E531BA /* DataController-Awards.swift */; };
+		BBF4718B27F464EA00E531BA /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715827F30AD400E531BA /* CommandLineArguments.swift */; };
+		BBF4718C27F464EA00E531BA /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4715627F30A5E00E531BA /* UserDefaultKeys.swift */; };
 		BBF915D227B51A0700BDCE70 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */; };
 		BBF9A06227B29837007F0FF4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF9A06127B29837007F0FF4 /* CloudKit.framework */; };
 		BBF9A06427B29A45007F0FF4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A06327B29A45007F0FF4 /* HomeView.swift */; };
@@ -183,6 +190,9 @@
 		BBF4717827F460FE00E531BA /* UltimatePortfolioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioWidget.swift; sourceTree = "<group>"; };
 		BBF4717A27F460FF00E531BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF4717C27F460FF00E531BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF4718727F4629E00E531BA /* DataController-Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Reminders.swift"; sourceTree = "<group>"; };
+		BBF4718927F4631700E531BA /* DataController-Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Awards.swift"; sourceTree = "<group>"; };
+		BBF4718D27F4691A00E531BA /* UltimatePortfolioWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolioWidgetExtension.entitlements; sourceTree = "<group>"; };
 		BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		BBF9A05E27B29819007F0FF4 /* UltimatePortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UltimatePortfolio.entitlements; sourceTree = "<group>"; };
 		BBF9A05F27B2981E007F0FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -287,6 +297,7 @@
 		BBDC4B9C27A1ADEE007ABB78 = {
 			isa = PBXGroup;
 			children = (
+				BBF4718D27F4691A00E531BA /* UltimatePortfolioWidgetExtension.entitlements */,
 				BBF9A06727B2D2D2007F0FF4 /* README.md */,
 				BBDC4BA727A1ADEE007ABB78 /* UltimatePortfolio */,
 				BB1E1BEF27DB65D0008F0A64 /* UltimatePortfolioTests */,
@@ -393,6 +404,8 @@
 				BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */,
 				BB9A5BB027BD608C00300543 /* Award.swift */,
 				BBDC4BB927A1B000007ABB78 /* DataController.swift */,
+				BBF4718727F4629E00E531BA /* DataController-Reminders.swift */,
+				BBF4718927F4631700E531BA /* DataController-Awards.swift */,
 				BBF4715327F3014A00E531BA /* UnlockManager.swift */,
 				BBF4715527F3031400E531BA /* Configuration.storekit */,
 			);
@@ -684,7 +697,9 @@
 				BBF4716127F3131800E531BA /* ProductView.swift in Sources */,
 				BB9A5BAD27BD5A5E00300543 /* Bundle+Extensions.swift in Sources */,
 				BB9A5BB327BD61D300300543 /* AwardsView.swift in Sources */,
+				BBF4718A27F4631700E531BA /* DataController-Awards.swift in Sources */,
 				BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */,
+				BBF4718827F4629E00E531BA /* DataController-Reminders.swift in Sources */,
 				BBF4716727F44E1E00E531BA /* AppDelegate.swift in Sources */,
 				BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */,
 				BBF4715927F30AD400E531BA /* CommandLineArguments.swift in Sources */,
@@ -718,7 +733,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF4718B27F464EA00E531BA /* CommandLineArguments.swift in Sources */,
+				BBF4718427F461D700E531BA /* Main.xcdatamodeld in Sources */,
+				BBF4718C27F464EA00E531BA /* UserDefaultKeys.swift in Sources */,
+				BBF4718627F4620C00E531BA /* DataController.swift in Sources */,
 				BBF4717927F460FE00E531BA /* UltimatePortfolioWidget.swift in Sources */,
+				BBF4718527F461E400E531BA /* Item+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,6 +1097,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1106,6 +1127,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolioWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
