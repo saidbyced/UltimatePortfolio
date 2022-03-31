@@ -58,36 +58,34 @@ struct UltimatePortfolioWidgetEntryView: View {
 }
 
 @main
-struct UltimatePortfolioWidget: Widget {
-    let kind: String = "UltimatePortfolioWidget"
+struct UltimatePortfolioWidgets: WidgetBundle {
+    var body: some Widget {
+        UpNextWidget()
+    }
+}
+
+struct UpNextWidget: Widget {
+    let kind: String = "UpNextWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             UltimatePortfolioWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Up next...")
+        .description("Your number one priority item.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
 struct UltimatePortfolioWidget_Previews: PreviewProvider {
-    static let previewWidgetFamilys: [WidgetFamily] = [
-        .systemSmall,
-        .systemMedium,
-        .systemLarge,
-        .systemExtraLarge
-    ]
-    
     static var previews: some View {
-        ForEach(previewWidgetFamilys, id: \.self) {
-            UltimatePortfolioWidgetEntryView(
-                entry: SimpleEntry(
-                    date: Date(),
-                    items: [Item.example]
-                )
+        UltimatePortfolioWidgetEntryView(
+            entry: SimpleEntry(
+                date: Date(),
+                items: [Item.example]
             )
-            .previewContext(WidgetPreviewContext(family: $0))
-            .previewDisplayName($0.description)
-        }
+        )
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
+        .previewDisplayName(WidgetFamily.systemSmall.description)
     }
 }
