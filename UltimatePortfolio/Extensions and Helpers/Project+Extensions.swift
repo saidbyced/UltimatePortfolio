@@ -14,6 +14,10 @@ extension Project {
         return title ?? NSLocalizedString("New Project", comment: "Name for new Project")
     }
     
+    var projectTitleForWidget: String {
+        return title ?? ""
+    }
+    
     var projectDetail: String {
         return detail ?? ""
     }
@@ -33,29 +37,6 @@ extension Project {
     }
     
     static let colors = ProjectColor.allNames
-    
-    enum ProjectColor: String, CaseIterable {
-        case pink, purple, red, orange, gold, green, teal, lightBlue, darkBlue, midnight, darkGray, gray
-        
-        var asString: String {
-            switch self {
-            case .pink, .purple, .red, .orange, .gold, .green, .teal, .midnight, .gray:
-                return self.rawValue.capitalized
-            case .lightBlue:
-                return "Light Blue"
-            case .darkBlue:
-                return "Dark Blue"
-            case .darkGray:
-                return "Dark Gray"
-            }
-        }
-        
-        static var allNames: [String] {
-            return ProjectColor.allCases.map { color in
-                color.asString
-            }
-        }
-    }
     
     // MARK: - View helpers
     var completionAmount: Double {

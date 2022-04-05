@@ -125,7 +125,12 @@
 "Restore Purchases" = "Restore Purchases";
 
 
-/* Widget */
-"Up next..." = "Up next...";
+/* Widgets */
+"Up next…" = "Up next…";
 "Nothing!" = "Nothing!";
-"Your number one priority item." = "Your number one priority item.";
+
+/* UpNextWidget */
+"Your #1 priority item." = "Your number one priority item.";
+
+/* NextFewWidget */
+"Your most important items." = "Your most important items.";

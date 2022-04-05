@@ -115,7 +115,7 @@ class DataController: ObservableObject {
             }
         }
         
-        try viewContext.save()
+        save()
     }
     
     /// Saves the CoreData context only if there are changes. Errors are silently
@@ -188,15 +188,16 @@ class DataController: ObservableObject {
             type: .and,
             subpredicates: [completedPredicate, openProjectPredicate]
         )
-        let sortdescriptor = NSSortDescriptor(keyPath: \Item.priority, ascending: false)
         itemFetchRequest.predicate = compoundPredicate
+        let sortdescriptor = NSSortDescriptor(keyPath: \Item.priority, ascending: false)
         itemFetchRequest.sortDescriptors = [sortdescriptor]
         itemFetchRequest.fetchLimit = count
         return itemFetchRequest
     }
     
     func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
-        return (try? viewContext.fetch(fetchRequest)) ?? []
+        let results = try? viewContext.fetch(fetchRequest)
+        return results ?? []
     }
     
     // MARK: - Spotlight integration

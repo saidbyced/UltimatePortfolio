@@ -12,6 +12,10 @@
 		BB1E1BF827DB6792008F0A64 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF727DB6792008F0A64 /* AssetTests.swift */; };
 		BB1E1BFA27DB698C008F0A64 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */; };
 		BB1E1BFC27DBABEA008F0A64 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */; };
+		BB35B42027FCB299005359CD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35B41F27FCB299005359CD /* DataProvider.swift */; };
+		BB35B42227FCB31E005359CD /* SimpleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35B42127FCB31E005359CD /* SimpleWidget.swift */; };
+		BB35B42427FCB3A0005359CD /* ComplexWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35B42327FCB3A0005359CD /* ComplexWidget.swift */; };
+		BB35B42627FCB61D005359CD /* ReviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35B42527FCB61D005359CD /* ReviewProvider.swift */; };
 		BB4C547527E884E5004427F8 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C547427E884E5004427F8 /* AwardTests.swift */; };
 		BB4C547D27E885BA004427F8 /* UltimatePortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E1BF027DB65D0008F0A64 /* UltimatePortfolioTests.swift */; };
 		BB4C548527E886EC004427F8 /* UltimatePortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C548427E886EC004427F8 /* UltimatePortfolioUITests.swift */; };
@@ -39,6 +43,11 @@
 		BBDC4BAD27A1ADEE007ABB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */; };
 		BBDC4BB827A1AE68007ABB78 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB627A1AE68007ABB78 /* Main.xcdatamodeld */; };
 		BBDC4BBA27A1B000007ABB78 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4BB927A1B000007ABB78 /* DataController.swift */; };
+		BBDD559427F5BFF800707A70 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */; };
+		BBE0E23527F59F5F0054CF17 /* ProjectColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0E23427F59F5F0054CF17 /* ProjectColors.swift */; };
+		BBE0E23627F5A0050054CF17 /* ProjectColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE0E23427F59F5F0054CF17 /* ProjectColors.swift */; };
+		BBE0E23727F5A00A0054CF17 /* Project+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */; };
+		BBE0E23827F5A02A0054CF17 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */; };
 		BBEB2E5E27B51C8000F26A2C /* Project+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */; };
 		BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */; };
 		BBEB2E6427B530E500F26A2C /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB2E6327B530E500F26A2C /* ItemRowView.swift */; };
@@ -131,6 +140,10 @@
 		BB1E1BF727DB6792008F0A64 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 		BB1E1BF927DB698C008F0A64 /* ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		BB1E1BFB27DBABEA008F0A64 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
+		BB35B41F27FCB299005359CD /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		BB35B42127FCB31E005359CD /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
+		BB35B42327FCB3A0005359CD /* ComplexWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidget.swift; sourceTree = "<group>"; };
+		BB35B42527FCB61D005359CD /* ReviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProvider.swift; sourceTree = "<group>"; };
 		BB4C547227E884E5004427F8 /* UltimatePortfolioPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4C547427E884E5004427F8 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		BB4C548227E886EC004427F8 /* UltimatePortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +176,7 @@
 		BBDC4BAC27A1ADEE007ABB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBDC4BB727A1AE68007ABB78 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		BBDC4BB927A1B000007ABB78 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BBE0E23427F59F5F0054CF17 /* ProjectColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColors.swift; sourceTree = "<group>"; };
 		BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+Extensions.swift"; sourceTree = "<group>"; };
 		BBEB2E5F27B52B1000F26A2C /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		BBEB2E6327B530E500F26A2C /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
@@ -344,12 +358,14 @@
 				BBF4715D27F3105700E531BA /* StringificationFixers */,
 				BBF915D127B51A0700BDCE70 /* Item+Extensions.swift */,
 				BBEB2E5D27B51C7F00F26A2C /* Project+Extensions.swift */,
+				BBE0E23427F59F5F0054CF17 /* ProjectColors.swift */,
 				BB9A5BAC27BD5A5E00300543 /* Bundle+Extensions.swift */,
 				BBEB2E6627B5324400F26A2C /* Binding+Extensions.swift */,
 				BB9A5BB427BD6C6B00300543 /* Color+Extensions.swift */,
 				BB9A5B7D27BA71F600300543 /* Sequence+Extensions.swift */,
 				BBF4715B27F3103B00E531BA /* SKProduct+Extensions.swift */,
 				BBF4715127EC818700E531BA /* HapticHelpers.swift */,
+				BB35B42527FCB61D005359CD /* ReviewProvider.swift */,
 			);
 			path = "Extensions and Helpers";
 			sourceTree = "<group>";
@@ -370,7 +386,10 @@
 		BBF4717727F460FE00E531BA /* UltimatePortfolioWidget */ = {
 			isa = PBXGroup;
 			children = (
+				BB35B41F27FCB299005359CD /* DataProvider.swift */,
 				BBF4717827F460FE00E531BA /* UltimatePortfolioWidget.swift */,
+				BB35B42127FCB31E005359CD /* SimpleWidget.swift */,
+				BB35B42327FCB3A0005359CD /* ComplexWidget.swift */,
 				BBF4717A27F460FF00E531BA /* Assets.xcassets */,
 				BBF4717C27F460FF00E531BA /* Info.plist */,
 			);
@@ -702,6 +721,7 @@
 				BBF4718827F4629E00E531BA /* DataController-Reminders.swift in Sources */,
 				BBF4716727F44E1E00E531BA /* AppDelegate.swift in Sources */,
 				BBBC37A027CE434300121793 /* ProjectsSummariesView.swift in Sources */,
+				BB35B42627FCB61D005359CD /* ReviewProvider.swift in Sources */,
 				BBF4715927F30AD400E531BA /* CommandLineArguments.swift in Sources */,
 				BB4C549327E8E036004427F8 /* ItemRowViewModel.swift in Sources */,
 				BBF4715727F30A5E00E531BA /* UserDefaultKeys.swift in Sources */,
@@ -722,6 +742,7 @@
 				BB9A5BB527BD6C6B00300543 /* Color+Extensions.swift in Sources */,
 				BBF4715C27F3103B00E531BA /* SKProduct+Extensions.swift in Sources */,
 				BB4C549127E8D628004427F8 /* HomeViewModel.swift in Sources */,
+				BBE0E23527F59F5F0054CF17 /* ProjectColors.swift in Sources */,
 				BB9A5B7E27BA71F600300543 /* Sequence+Extensions.swift in Sources */,
 				BB9A5BAB27BD576500300543 /* SelectSomethingView.swift in Sources */,
 				BBEB2E6027B52B1000F26A2C /* EditItemView.swift in Sources */,
@@ -733,12 +754,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE0E23827F5A02A0054CF17 /* Sequence+Extensions.swift in Sources */,
 				BBF4718B27F464EA00E531BA /* CommandLineArguments.swift in Sources */,
 				BBF4718427F461D700E531BA /* Main.xcdatamodeld in Sources */,
 				BBF4718C27F464EA00E531BA /* UserDefaultKeys.swift in Sources */,
 				BBF4718627F4620C00E531BA /* DataController.swift in Sources */,
+				BB35B42427FCB3A0005359CD /* ComplexWidget.swift in Sources */,
+				BB35B42027FCB299005359CD /* DataProvider.swift in Sources */,
+				BBDD559427F5BFF800707A70 /* Color+Extensions.swift in Sources */,
+				BBE0E23627F5A0050054CF17 /* ProjectColors.swift in Sources */,
+				BBE0E23727F5A00A0054CF17 /* Project+Extensions.swift in Sources */,
 				BBF4717927F460FE00E531BA /* UltimatePortfolioWidget.swift in Sources */,
 				BBF4718527F461E400E531BA /* Item+Extensions.swift in Sources */,
+				BB35B42227FCB31E005359CD /* SimpleWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +988,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1016,7 +1044,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

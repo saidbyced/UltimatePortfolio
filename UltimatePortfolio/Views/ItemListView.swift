@@ -33,7 +33,7 @@ struct ItemListView: View {
     func navigationLabel(for item: Item) -> some View {
         HStack {
             Circle()
-                .stroke(Color(item.project?.projectColor ?? Project.ProjectColor.lightBlue.asString))
+                .stroke(Color(item.project?.projectColor ?? ProjectColor.lightBlue.asString))
                 .frame(width: 44, height: 44)
             
             VStack(alignment: .leading) {
