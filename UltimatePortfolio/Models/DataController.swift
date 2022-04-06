@@ -60,6 +60,8 @@ class DataController: ObservableObject {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
             
+            self.viewContext.automaticallyMergesChangesFromParent = true
+            
             #if DEBUG
             if CommandLine.arguments.contains(CLArgument.enableTesting.rawValue) {
                 self.deleteAll()
@@ -101,6 +103,7 @@ class DataController: ObservableObject {
         for projectNumber in 1...5 {
             let project = Project(context: viewContext)
             project.title = "Project \(projectNumber)"
+            project.color = ProjectColor.lightBlue.asString
             project.items = []
             project.creationDate = Date()
             project.closed = Bool.random()
@@ -132,6 +135,7 @@ class DataController: ObservableObject {
         if canCreate {
             let project = Project(context: viewContext)
             project.closed = false
+            project.color = ProjectColor.lightBlue.asString
             project.creationDate = Date()
             save()
             return true
@@ -143,6 +147,8 @@ class DataController: ObservableObject {
     func addNewItem(to project: Project) {
         let item = Item(context: viewContext)
         item.project = project
+        item.priority = 2
+        item.completed = false
         item.creationDate = Date()
         save()
     }
@@ -167,12 +173,23 @@ class DataController: ObservableObject {
     
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
-        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
-        _ = try? viewContext.execute(batchDeleteRequest1)
+        delete(fetchRequest1)
         
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
-        let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
-        _ = try? viewContext.execute(batchDeleteRequest2)
+        delete(fetchRequest2)
+    }
+    
+    private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        batchDeleteRequest.resultType = .resultTypeObjectIDs
+        
+        if
+            let delete = try? viewContext.execute(batchDeleteRequest) as? NSBatchDeleteResult,
+            let deleteResult = delete.result as? [NSManagedObjectID]
+        {
+            let changes = [NSDeletedObjectsKey: deleteResult]
+            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [viewContext])
+        }
     }
     
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {

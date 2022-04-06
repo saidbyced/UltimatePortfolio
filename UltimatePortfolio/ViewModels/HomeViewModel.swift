@@ -18,15 +18,11 @@ extension HomeView {
         @Published var projects = [Project]()
         @Published var items = [Item]()
         @Published var selectedItem: Item?
+        @Published var upNextItems = ArraySlice<Item>()
+        @Published var moreToExploreItems = ArraySlice<Item>()
         
         var managedObjectContext: NSManagedObjectContext {
             return dataController.container.viewContext
-        }
-        var upNextItems: ArraySlice<Item> {
-            items.prefix(3)
-        }
-        var moreToExploreItems: ArraySlice<Item> {
-            items.dropFirst(3)
         }
         
         init(dataController: DataController) {
@@ -74,18 +70,19 @@ extension HomeView {
             do {
                 try itemsController.performFetch()
                 items = itemsController.fetchedObjects ?? []
-                
+                upNextItems = items.prefix(3)
+                moreToExploreItems = items.dropFirst(3)
             } catch {
                 print("Failed to fetch our items!")
             }
         }
         
         func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            if let newItems = controller.fetchedObjects as? [Item] {
-                self.items = newItems
-            } else if let newProjects = controller.fetchedObjects as? [Project] {
-                projects = newProjects
-            }
+            items = itemsController.fetchedObjects ?? []
+            upNextItems = items.prefix(3)
+            moreToExploreItems = items.dropFirst(3)
+            
+            projects = projectsController.fetchedObjects ?? []
         }
         
         func addSampleData() {

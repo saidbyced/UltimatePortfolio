@@ -76,7 +76,7 @@ extension Item {
                     ),
                     NSSortDescriptor(
                         keyPath: \Item.priority,
-                        ascending: true
+                        ascending: false
                     )
                 ]
             }

@@ -13,7 +13,7 @@ enum ProjectColor: String, CaseIterable {
     var asString: String {
         switch self {
         case .pink, .purple, .red, .orange, .gold, .green, .teal, .midnight, .gray:
-            return self.rawValue
+            return self.rawValue.capitalized
         case .lightBlue:
             return "Light Blue"
         case .darkBlue:
