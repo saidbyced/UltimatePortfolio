@@ -15,11 +15,11 @@ extension Item {
     }
     
     var itemDetail: String {
-        return detail ?? ""
+        return detail.orEmpty
     }
     
     var itemCreationDate: Date {
-        return creationDate ?? Date()
+        return creationDate.orToday
     }
     
     enum Priority: Int, CaseIterable {

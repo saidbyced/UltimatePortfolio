@@ -59,7 +59,7 @@ extension DataController {
             nContent.subtitle = projectDetail
         }
         
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime.orToday)
         let nTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         let nRequest = UNNotificationRequest(identifier: id, content: nContent, trigger: nTrigger)

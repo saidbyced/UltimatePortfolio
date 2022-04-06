@@ -15,15 +15,15 @@ extension Project {
     }
     
     var projectTitleForWidget: String {
-        return title ?? ""
+        return title.orEmpty
     }
     
     var projectDetail: String {
-        return detail ?? ""
+        return detail.orEmpty
     }
     
     var projectColor: String {
-        return color ?? "Light Blue"
+        return color.orString("Light Blue")
     }
     
     var projectItems: [Item] {
