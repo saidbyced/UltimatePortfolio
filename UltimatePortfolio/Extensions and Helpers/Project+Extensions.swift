@@ -5,6 +5,7 @@
 //  Created by Christopher Eadie on 10/02/2022.
 //
 
+import CloudKit
 import CoreData
 import SwiftUI
 
@@ -32,8 +33,45 @@ extension Project {
         return items ?? []
     }
     
-    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
+    func projectItems(using sortOrder: Item.SortOrder = .optimised) -> [Item] {
         return projectItems.sorted(by: sortOrder.sortDescriptors)
+    }
+    
+    func prepareCloudRecords() -> [CKRecord] {
+        let parentName = objectID.uriRepresentation().absoluteString
+        let parentID = CKRecord.ID(recordName: parentName)
+        let parent = CKRecord(recordType: "Project", recordID: parentID)
+        parent["title"] = projectTitle
+        parent["detail"] = projectDetail
+        parent["owner"] = "saidByCed"
+        parent["closed"] = closed
+        
+        var records = projectItems().map { item -> CKRecord in
+            let childName = item.objectID.uriRepresentation().absoluteString
+            let childID = CKRecord.ID(recordName: childName)
+            let child = CKRecord(recordType: "Item", recordID: childID)
+            child["title"] = item.itemTitle
+            child["detail"] = item.itemDetail
+            child["completed"] = item.completed
+            child["project"] = CKRecord.Reference(recordID: parentID, action: .deleteSelf)
+            return child
+        }
+        
+        records.append(parent)
+        return records
+    }
+    
+    func pushToICloud() {
+        let recordsToSave = prepareCloudRecords()
+        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
+        operation.savePolicy = .allKeys
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                print("Error passing data to iCloud: \(error.localizedDescription)")
+            }
+        }
+        
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
     
     static let colors = ProjectColor.allNames

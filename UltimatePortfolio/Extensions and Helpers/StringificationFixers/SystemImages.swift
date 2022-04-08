@@ -13,6 +13,7 @@ struct SystemImage {
     static let checkmarkCircle: String = "checkmark.circle"
     static let exclamationmarkTriangle: String = "exclamationmark.triangle"
     static let house: String = "house"
+    static let iCloudAndArrowUp: String = "icloud.and.arrow.up"
     static let listBullet: String = "list.bullet"
     static let plus: String = "plus"
     static let rosette: String = "rosette"

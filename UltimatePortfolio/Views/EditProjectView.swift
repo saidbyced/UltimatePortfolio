@@ -86,6 +86,11 @@ struct EditProjectView: View {
             }
         }
         .navigationTitle("Edit project")
+        .toolbar {
+            Button(action: project.pushToICloud) {
+                Label("Upload to iCloud", image: SystemImage.iCloudAndArrowUp)
+            }
+        }
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $isShowingDeleteAlert, content: deleteAlert)
     }
