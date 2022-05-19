@@ -22,6 +22,8 @@ extension Item {
         return creationDate.orToday
     }
     
+    static let ckRecordType: String = "Project"
+    
     enum Priority: Int, CaseIterable {
         case low = 1, medium, high
         

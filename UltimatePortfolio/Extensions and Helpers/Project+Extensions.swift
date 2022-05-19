@@ -43,7 +43,7 @@ extension Project {
         let parent = CKRecord(recordType: "Project", recordID: parentID)
         parent["title"] = projectTitle
         parent["detail"] = projectDetail
-        parent["owner"] = "saidByCed"
+        parent["owner"] = "SaidByCed"
         parent["closed"] = closed
         
         var records = projectItems().map { item -> CKRecord in
@@ -59,19 +59,6 @@ extension Project {
         
         records.append(parent)
         return records
-    }
-    
-    func pushToICloud() {
-        let recordsToSave = prepareCloudRecords()
-        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
-        operation.savePolicy = .allKeys
-        operation.modifyRecordsCompletionBlock = { _, _, error in
-            if let error = error {
-                print("Error passing data to iCloud: \(error.localizedDescription)")
-            }
-        }
-        
-        CKContainer.default().publicCloudDatabase.add(operation)
     }
     
     static let colors = ProjectColor.allNames

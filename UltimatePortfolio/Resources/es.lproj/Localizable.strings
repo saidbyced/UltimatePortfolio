@@ -80,6 +80,7 @@
 "Description of this project" = "Descripción de este proyecto";
 "Custom project colour" = "Color de proyecto personalizado";
 "Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely." = "Cerrar un proyecto lo mueve de la pestaña Abierto a Cerrado; eliminarlo elimina el proyecto por completo.";
+"Upload to iCloud" = "Subir a iCloud";
 "Reopen this project" = "Reabrir este proyecto";
 "Close this project" = "Cerrar este proyecto";
 "Delete this project" = "Eliminar este proyecto";
