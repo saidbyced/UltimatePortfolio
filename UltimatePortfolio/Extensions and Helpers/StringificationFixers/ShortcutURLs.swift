@@ -8,12 +8,12 @@
 import Foundation
 
 enum ShortcutURL: String {
-    static let base: String = "com.christophereadie.ultimateportfolio."
+    static let base: String = "com.christophereadie.ultimateportfolio"
     
     case newProject
     
     var activityType: String {
-        return ShortcutURL.base + self.rawValue
+        return ShortcutURL.base + "." + self.rawValue
     }
     
     var title: String {

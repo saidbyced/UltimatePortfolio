@@ -78,7 +78,7 @@ struct EditProjectView: View {
             Section(
                 footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.") // swiftlint:disable:this line_length
             ) {
-                Button("Upload to iCloud", action: pushToICloud)
+                Button("Upload to iCloud", action: project.pushToICloud)
                 
                 Button(project.closed ? "Reopen this project" : "Close this project", action: toggleClosed)
                 
@@ -157,19 +157,6 @@ struct EditProjectView: View {
             
             dataController.removeReminders(for: project)
         }
-    }
-    
-    func pushToICloud() {
-        let recordsToSave = project.prepareCloudRecords()
-        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
-        operation.savePolicy = .allKeys
-        operation.modifyRecordsCompletionBlock = { _, _, error in
-            if let error = error {
-                print("Error passing data to iCloud: \(error.localizedDescription)")
-            }
-        }
-        
-        CKContainer(identifier: "iCloud.com.christophereadie.ultimateportfolio").publicCloudDatabase.add(operation)
     }
     
     func delete() {

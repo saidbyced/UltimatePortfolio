@@ -24,8 +24,6 @@ enum ProjectColor: String, CaseIterable {
     }
     
     static var allNames: [String] {
-        return ProjectColor.allCases.map { color in
-            color.asString
-        }
+        return ProjectColor.allCases.map { $0.asString }
     }
 }

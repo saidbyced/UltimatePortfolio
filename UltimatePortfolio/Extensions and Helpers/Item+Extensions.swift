@@ -22,36 +22,35 @@ extension Item {
         return creationDate.orToday
     }
     
-    static let ckRecordType: String = "Project"
+    static let ckRecordType: String = "Item"
     
     enum Priority: Int, CaseIterable {
         case low = 1, medium, high
         
         var asString: String {
+            var priorityString = ""
             switch self {
             case .low:
-                return NSLocalizedString("Low", comment: "Low priority")
+                priorityString = "Low"
             case .medium:
-                return NSLocalizedString("Medium", comment: "Medium priority")
+                priorityString = "Medium"
             case .high:
-                return NSLocalizedString("High", comment: "High priority")
+                priorityString = "High"
             }
+            return NSLocalizedString(priorityString, comment: "\(priorityString) priority")
         }
     }
     
     // MARK: - View helpers
-    enum SortOrder {
+    enum SortOrder: String {
         case creationDate, optimised, title
         
         var asString: String {
-            switch self {
-            case .creationDate:
-                return NSLocalizedString("Creation Date", comment: "Sort order 'creationDate' name")
-            case .optimised:
-                return NSLocalizedString("Optimised", comment: "Sort order 'optimised' name")
-            case .title:
-                return NSLocalizedString("Title", comment: "Sort order 'title' name")
+            var orderTypeString = self.rawValue.capitalized
+            if self == .creationDate {
+                orderTypeString = "Creation Date"
             }
+            return NSLocalizedString(orderTypeString, comment: "Sort order '\(self.rawValue)' name")
         }
         
         var sortDescriptors: [NSSortDescriptor] {

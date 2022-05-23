@@ -24,7 +24,7 @@ extension Project {
     }
     
     var projectColor: String {
-        return color.orString("Light Blue")
+        return color.orString(ProjectColor.lightBlue.asString)
     }
     
     var projectItems: [Item] {
@@ -33,6 +33,9 @@ extension Project {
         return items ?? []
     }
     
+    static let colors = ProjectColor.allNames
+    static let ckRecordType: String = "Project"
+    
     func projectItems(using sortOrder: Item.SortOrder = .optimised) -> [Item] {
         return projectItems.sorted(by: sortOrder.sortDescriptors)
     }
@@ -40,7 +43,7 @@ extension Project {
     func prepareCloudRecords() -> [CKRecord] {
         let parentName = objectID.uriRepresentation().absoluteString
         let parentID = CKRecord.ID(recordName: parentName)
-        let parent = CKRecord(recordType: "Project", recordID: parentID)
+        let parent = CKRecord(recordType: Project.ckRecordType, recordID: parentID)
         parent["title"] = projectTitle
         parent["detail"] = projectDetail
         parent["owner"] = "SaidByCed"
@@ -49,7 +52,7 @@ extension Project {
         var records = projectItems().map { item -> CKRecord in
             let childName = item.objectID.uriRepresentation().absoluteString
             let childID = CKRecord.ID(recordName: childName)
-            let child = CKRecord(recordType: "Item", recordID: childID)
+            let child = CKRecord(recordType: Item.ckRecordType, recordID: childID)
             child["title"] = item.itemTitle
             child["detail"] = item.itemDetail
             child["completed"] = item.completed
@@ -61,7 +64,18 @@ extension Project {
         return records
     }
     
-    static let colors = ProjectColor.allNames
+    func pushToICloud() {
+        let recordsToSave = prepareCloudRecords()
+        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
+        operation.savePolicy = .allKeys
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                print("Error passing data to iCloud: \(error.localizedDescription)")
+            }
+        }
+        
+        CKContainer(identifier: "iCloud.com.christophereadie.ultimateportfolio").publicCloudDatabase.add(operation)
+    }
     
     // MARK: - View helpers
     var completionAmount: Double {
